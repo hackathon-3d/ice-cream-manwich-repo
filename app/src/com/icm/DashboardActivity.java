@@ -1,24 +1,28 @@
 package com.icm;
 
+import roboguice.inject.ContentView;
 import roboguice.inject.InjectResource;
+import roboguice.inject.InjectView;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.Intent;
 import android.content.Loader;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
 import com.icm.bean.PersonBean;
 import com.icm.pojo.BeanPoster;
 
+@ContentView(R.layout.activity_dashboard)
 public class DashboardActivity extends RoboSherlockActivity implements LoaderCallbacks<QuickHistory>{
 
     @InjectResource(R.string.loan_title)        String LOAN_TITLE;
     @InjectResource(R.string.borrow_title)      String BORROW_TITLE;
     @InjectResource(R.string.submit_loan_text)  String LOAN_THIS_BOOK;
     @InjectResource(R.string.submit_borrow_text)String BORROW_THIS_BOOK;
+    @InjectView(R.id.dueDatesTableLayout)       TableLayout dueDatesTableLayout;
     
 	private static final int LOADER_QUICK_HISTORY = 1;
 	private static final int LOADER_MY_USERNAME = 2;
@@ -33,8 +37,6 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_dashboard);
-		
 		
 		// Get the username from the phone number
 		phonenumber = Constants.getDevicePhoneNumber(DashboardActivity.this);
@@ -58,15 +60,12 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 				view.setText("ID is: " + Integer.toString(bean.user_id));
 			}
 		});
+
+		View view = getLayoutInflater().inflate(R.layout.due_date_row, null);
+		TextView textView = (TextView) view.findViewById(R.id.due_date_row_book_title);
+		textView.setText("Moby Dick");
 		
-		
-		quickHistoryAdapter = new QuickHistoryAdapter(this);
-		
-		ListView historyView = (ListView) findViewById(R.id.quickHistory);
-		
-		historyView.setAdapter(quickHistoryAdapter);
-		
-		
+		dueDatesTableLayout.addView(view);		
 		
 	}
 
