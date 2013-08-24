@@ -26,6 +26,9 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     @InjectView(R.id.contact_name_input)    EditText contactTextView;
     @InjectView(R.id.due_date_edit_text)    EditText dueDateTextView;
     @InjectView(R.id.scan_button)           Button scanButton;
+    
+    private String contactName;    
+    private String contactNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +70,8 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
                                         null,
                                         ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + id, null, null);
                         phones.moveToFirst();
-                        String contactNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                        String contactName = c.getString(c.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME));
+                        contactNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                        contactName = c.getString(c.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME));
                         final String contactTextForDisplay = String.format("%s (%s)", contactName, contactNumber);
                         contactTextView.setText(contactTextForDisplay);
                     }
