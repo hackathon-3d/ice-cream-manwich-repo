@@ -98,7 +98,7 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 		
 		// Assume id  == LOADER_QUICK_HISTORY
 		
-		return new QuickHistoryLoader(this);
+		return new QuickHistoryLoader(this, this.userid);
 	}
 
 	@Override
