@@ -1,39 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/history_row_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:src="@drawable/ic_launcher" />
 
-    <TextView
-        android:id="@+id/bookNameView"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/imageView"
-        android:text="Book Name" />
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/history_linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/history_row_dateView"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/history_row_bookNameView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Book Name" />
+
+            <TextView
+                android:id="@+id/history_row_personView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dip"
+                android:text="Person Name" />
+        </LinearLayout>
+        
+	    <TextView
+	        android:id="@+id/history_row_dateView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:text="Due Date" />
+    
+    </RelativeLayout>
 
 
-    <TextView
-        android:id="@+id/personView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/bookNameView"
-        android:text="Person Name" />
-    <TextView
-        android:id="@+id/dateView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="Due Date" />
-
-
-</RelativeLayout>
+</LinearLayout>
