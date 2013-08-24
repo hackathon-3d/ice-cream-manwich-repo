@@ -23,5 +23,10 @@
         <item name="android:layout_weight">1.0</item>
         <item name="android:layout_margin">7dip</item>
     </style>
+    <style name="TextEditor">
+        <item name="android:textColor">#F0F0F0</item>
+    </style>
+    <style name="DatePickerStyle" parent="TextEditor"></style>
+    <style name="ButtonStyle"></style>
 
 </resources>
