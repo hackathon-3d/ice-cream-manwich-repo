@@ -42,16 +42,14 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 		
 		builder.scheme("https");
 		
-		builder.path(ProductInfoManager.BASE_URL);
-		builder.appendQueryParameter("key", ProductInfoManager.API_KEY);
-		builder.appendQueryParameter("country", ProductInfoManager.COUNTRY);
-		builder.appendQueryParameter("q", barcodeNumber);
-		
-		Uri uri = builder.build();
+		String uri = "https://" + ProductInfoManager.BASE_URL;
+		uri += "?key=" + ProductInfoManager.API_KEY;
+		uri += "&country=" + ProductInfoManager.COUNTRY;
+		uri += "&q=" + barcodeNumber;
 				
-		BeanLoader.loadBean(ProductSearchResult.class, uri.toString(), this);
+		BeanLoader.loadBean(ProductSearchResult.class, uri, this);
 		
-		Log.i("FutureProductInfo", "Fetching " + uri.toString());
+		Log.i("FutureProductInfo", "Fetching " + uri);
 	}
 
 	@Override
@@ -68,8 +66,12 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 		{
 			this.wait(10000);
 		}
+		ProductInfo info = this.info;
 		
 		Log.i("FutureProductInfo", "Getting " + barcodeNumber + " result " + info);
+		
+		if(info == null)
+			return null;
 		
 		products.put(barcodeNumber, info);
 		return info;
@@ -116,14 +118,14 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 		
 		for(ProductItem item : resultList)
 		{
-			if(item.description == null)
+			if(item.title == null)
 				continue;
 			if(item.images == null)
 				continue;
 			
 			ProductInfo info = new ProductInfo();
 			
-			info.name = item.description;
+			info.name = item.title;
 			info.barcodeNumber = barcodeNumber;
 			
 			Log.i("FutureProductInfo", "item " + info.name + " barcode: " + barcodeNumber);
