@@ -4,13 +4,12 @@
     <string name="app_name">Books with Friends</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_loan_borrow">LoanBorrowActivity</string>
-    <string name="title_activity_dashboard">DashboardActivity</string>
-    <string name="loan_title">Loan a book</string>
-    <string name="borrow_title">Borrow a book</string>
-    <string name="scan_media_button">Scan</string>
+    <string name="title_activity_dashboard">Books with Friends</string>
+    <string name="loan_title">Loaning</string>
+    <string name="borrow_title">Borrowing</string>
+    <string name="scan_media_button">Scan barcode</string>
     <string name="loan_borrow_contact_hint">Enter your friend\'s name</string>
-    <string name="submit">Submit</string>
-    <string name="share_text">Share</string>
+    <string name="submit_loan_text">Loan this book</string>
+    <string name="submit_borrow_text">Borrow this book</string>
 
 </resources>
