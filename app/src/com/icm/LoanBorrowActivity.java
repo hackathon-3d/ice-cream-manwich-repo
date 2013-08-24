@@ -163,9 +163,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     }
     
     public String getDevicePhoneNumber(){
-        TelephonyManager manager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        String phoneNumber = manager.getLine1Number();
-        return phoneNumber;
+        return Constants.getDevicePhoneNumber(this);
     }
     
     private void setBookImage(String url){

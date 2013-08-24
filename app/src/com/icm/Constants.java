@@ -1,5 +1,8 @@
 package com.icm;
 
+import android.content.Context;
+import android.telephony.TelephonyManager;
+
 public class Constants {
 
     private static final String SERVER_URL = "rendaz.pythonanywhere.com/bookswithfriends/";
@@ -17,4 +20,12 @@ public class Constants {
         return NEW_USER_URL + phone + "phone";
     }
 
+    
+    public static String getDevicePhoneNumber(Context context){
+        TelephonyManager manager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        String phoneNumber = manager.getLine1Number();
+        return phoneNumber;
+    }
+
+    
 }
