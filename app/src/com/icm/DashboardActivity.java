@@ -69,16 +69,15 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 	@Override
 	public void onLoadFinished(Loader<QuickHistory> loader, QuickHistory data) {
 
-		quickHistoryAdapter.swapContent(data);
-		// TODO Auto-generated method stub
+		quickHistoryAdapter.clear();
+		quickHistoryAdapter.addAll(data.getCollection());
 		
 	}
 
 	@Override
 	public void onLoaderReset(Loader<QuickHistory> loader) {
-		// TODO Auto-generated method stub
-		
-		quickHistoryAdapter.swapContent(null);
+
+		quickHistoryAdapter.clear();
 		
 		
 	}
