@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/sitemaps/tests
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/sitemaps/tests/base.py
+END
+generic.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/sitemaps/tests/generic.py
+END
+https.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/sitemaps/tests/https.py
+END
+flatpages.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/sitemaps/tests/flatpages.py
+END

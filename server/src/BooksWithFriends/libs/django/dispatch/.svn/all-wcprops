@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/dispatch
+END
+saferef.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/dispatch/saferef.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/dispatch/__init__.py
+END
+dispatcher.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/dispatch/dispatcher.py
+END

@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/auth/templates/registration
+END
+password_reset_subject.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/auth/templates/registration/password_reset_subject.txt
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/staticfiles
+END
+finders.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/staticfiles/finders.py
+END
+views.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/staticfiles/views.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/contrib/staticfiles/__init__.py
+END
+handlers.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/staticfiles/handlers.py
+END
+utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/staticfiles/utils.py
+END
+models.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/contrib/staticfiles/models.py
+END
+storage.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/staticfiles/storage.py
+END
+urls.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/contrib/staticfiles/urls.py
+END

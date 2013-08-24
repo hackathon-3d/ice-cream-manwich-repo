@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/templatetags
+END
+future.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/templatetags/future.py
+END
+l10n.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/templatetags/l10n.py
+END
+tz.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/templatetags/tz.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/templatetags/__init__.py
+END
+i18n.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/templatetags/i18n.py
+END
+cache.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/templatetags/cache.py
+END
+static.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/templatetags/static.py
+END

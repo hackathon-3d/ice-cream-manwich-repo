@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/conf/app_template
+END
+views.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/conf/app_template/views.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/conf/app_template/__init__.py
+END
+tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/conf/app_template/tests.py
+END
+models.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/conf/app_template/models.py
+END

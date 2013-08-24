@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/conf/urls
+END
+shortcut.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/conf/urls/shortcut.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/conf/urls/__init__.py
+END
+i18n.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/conf/urls/i18n.py
+END
+defaults.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/conf/urls/defaults.py
+END
+static.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/conf/urls/static.py
+END

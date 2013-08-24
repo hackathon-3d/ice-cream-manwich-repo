@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/db
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/db/__init__.py
+END
+utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/db/utils.py
+END
+transaction.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/db/transaction.py
+END
