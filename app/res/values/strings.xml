@@ -14,6 +14,8 @@
     <string name="title_activity_history">History</string>
     <string name="title_activity_library">Library</string>
     <string name="manual_barcode_text">Use current barcode</string>
+    <string name="manual_barcode_edit_text">Enter barcode or scan</string>
+    
     <string-array name="default_history_item_titles">
         <item>Ender\'s Game</item>
         <item>The Inn at Rose Harbor</item>

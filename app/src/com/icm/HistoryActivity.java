@@ -22,7 +22,8 @@ public class HistoryActivity extends RoboSherlockListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         
         List<LoanBean> beans = new ArrayList<LoanBean>();
         for(int i = 0; i < itemTitles.length; i++){

@@ -15,6 +15,7 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:editTextStyle">@color/CornflowerBlue</item>
     </style>
     
     <style name="dashboard_button_style">
@@ -23,5 +24,13 @@
         <item name="android:layout_weight">1.0</item>
         <item name="android:layout_margin">7dip</item>
     </style>
+    <style name="TextEditor">
+        <item name="android:textColor">#D0D0D0</item>
+    </style>
+    <style name="DatePickerStyle" parent="TextEditor">
+        <item name="android:editTextStyle">@color/CornflowerBlue</item>
+    </style>
+    <style name="ButtonStyle"></style>
+    <color name="CornflowerBlue">#FFFFFF</color>
 
 </resources>

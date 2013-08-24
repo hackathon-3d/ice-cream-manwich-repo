@@ -30,7 +30,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="barcode"
+        android:hint="Enter barcode or scan"
         android:inputType="textPersonName" >
 
     </EditText>

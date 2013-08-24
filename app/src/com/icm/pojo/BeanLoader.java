@@ -1,6 +1,5 @@
 package com.icm.pojo;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -30,6 +29,9 @@ public final class BeanLoader {
 
 			@Override
 			protected T doInBackground(Void... params) {
+				
+				Log.i("BeanLoader", "Loading from " + urlString);
+				
 				try 
 				{
 					
@@ -59,6 +61,10 @@ public final class BeanLoader {
 				catch (IOException e) 
 				{
 					Log.e("BeanLoader", "Exception loading bean", e);
+				}
+				catch(Exception e)
+				{
+					Log.e("BeanLoader", "Terrible exception loading bean", e);
 				}
 
 				return null;

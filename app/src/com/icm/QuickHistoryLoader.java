@@ -5,13 +5,18 @@ import android.content.Context;
 
 public class QuickHistoryLoader extends AsyncTaskLoader<QuickHistory> {
 
-	public QuickHistoryLoader(Context context) {
+	private final int userid;
+	
+	public QuickHistoryLoader(Context context, int userid) {
 		super(context);
-		// TODO Auto-generated constructor stub
+		this.userid = userid;
 	}
 
 	@Override
 	public QuickHistory loadInBackground() {
+		
+		
+		
 		// TODO Auto-generated method stub
 		return null;
 	}
