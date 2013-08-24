@@ -218,6 +218,28 @@ def get_all_borrowed_items(request, user_id):
         return HttpResponse(json.dumps({"error_str": "Could Not find loaned items"}), content_type="application/json")
     return HttpResponse(json.dumps({"error_str": "Could Not find user"}), content_type="application/json")
 
+def get_history(request, user_id):
+    user = LibraryUser.objects.get(pk=user_id)
+    
+    if (user.pk):
+        loaned_from_list = LoanItem.objects.filter(loanedFrom__pk=user.pk)
+        loaned_to_list = LoanItem.objects.filter(loanedTo__pk=user.pk)
+        loaned_list = loaned_to_list | loaned_from_list
+
+        list = []
+        for loan in loaned_list.order_by('dueDate'):
+            list.append({"name": loan.item.name,
+                         "category": loan.item.category,
+                         "due_date": datetime.strftime(loan.dueDate, "%m/%d/%Y"),
+                         "loan_date": datetime.strftime(loan.loanDate, "%m/%d/%Y"),
+                         "item_id": loan.item.pk,
+                         "loan_id": loan.pk,
+                         "loan_from_name": loan.loanedFrom.name,
+                         "loan_to_name": loan.loanedTo.name})
+        return HttpResponse(json.dumps(list), content_type="application/json")
+
+    return HttpResponse(json.dumps({"error_str": "Could Not find user"}), content_type="application/json")
+
 def get_friend(request, user_id):
     user = LibraryUser.objects.get(pk=user_id)
 
