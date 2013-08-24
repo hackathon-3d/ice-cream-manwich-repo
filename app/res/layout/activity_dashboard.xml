@@ -30,7 +30,8 @@
 
         <LinearLayout 
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content" 
+            style="@style/dashboard_row_style">
         
                 <Button
                     android:id="@+id/loanButton"
@@ -49,7 +50,8 @@
 	    
 	    <LinearLayout 
 	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content" >
+	        android:layout_height="wrap_content"
+	        style="@style/dashboard_row_style" >
 	
 		    <Button
 		        android:id="@+id/historyButton"
