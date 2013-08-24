@@ -5,8 +5,8 @@ import android.telephony.TelephonyManager;
 
 public class Constants {
 
-    private static final String SERVER_URL = "rendaz.pythonanywhere.com/bookswithfriends/";
-    public static final String NEW_USER_URL = SERVER_URL + "user/";
+    private static final String SERVER_URL = "http://rendaz.pythonanywhere.com/bookswithfriends/";
+    public static final String NEW_USER_URL = SERVER_URL + "user";
 	
 	// POST parameters. please do not muck with them.
     public static final String NAME = "name/";
