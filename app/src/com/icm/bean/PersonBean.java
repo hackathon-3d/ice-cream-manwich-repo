@@ -2,7 +2,7 @@ package com.icm.bean;
 
 public class PersonBean {
 
-	public String id;
+	public String user_id;
 	public String name;
 	public String phonenumber;
 	

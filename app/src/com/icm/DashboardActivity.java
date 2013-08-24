@@ -4,7 +4,6 @@ import roboguice.inject.InjectResource;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.Intent;
 import android.content.Loader;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -12,6 +11,7 @@ import android.widget.ListView;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
 import com.icm.bean.PersonBean;
 import com.icm.pojo.BeanLoader;
+import com.icm.pojo.BeanPoster;
 
 public class DashboardActivity extends RoboSherlockActivity implements LoaderCallbacks<QuickHistory>{
 
@@ -36,13 +36,17 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 		
 		// Get the username from the phone number
 		phonenumber = Constants.getDevicePhoneNumber(DashboardActivity.this);
-		String url = Constants.newUserPostUrl("Big Mike", "555-555-1234");
-		BeanLoader.loadBean(PersonBean.class, url, new BeanLoader.Callback<PersonBean>() {
-
+		String url = Constants.newUserPostUrl("555-555-1234");
+		
+		Bundle postBody = new Bundle();
+		postBody.putString("name", "Big Mike");
+		postBody.putString("phone", "555-555-1234");
+		
+		BeanPoster.postBean(PersonBean.class, url, postBody, new BeanPoster.Callback<PersonBean>() {
 			@Override
-			public void beanLoaded(PersonBean bean) {
+			public void beanPosted(PersonBean bean) {
 				
-				DashboardActivity.this.userid = bean.id;
+				DashboardActivity.this.userid = bean.user_id;
 				
 				getLoaderManager().initLoader(LOADER_QUICK_HISTORY, null, DashboardActivity.this);
 			}
