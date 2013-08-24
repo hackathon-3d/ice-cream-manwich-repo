@@ -6,22 +6,27 @@ Created on 8/23/2013
 
 from django.conf.urls.defaults import *
 
-urlpatterns = patterns('src', 
+urlpatterns = patterns('src.views', 
 
-    ('^newUser/(.+)$', 'new_user'),
+    url(r'^user$', 'user'),
+    url(r'^user/(.+)$', 'user'),
                        
-    ('^getInventory/(.+)$', 'get_inventory'),
-    ('^addInventoryItem/(.+)$', 'add_inventory_item'),
-    ('^getFriend/(.+)$', 'get_friend'),
-    ('^getAllFriends/(.+)$', 'get_all_friends'),
-    ('^getLoanedItem/(.+)$', 'get_loaned_item'),
-    ('^getAllLoanedItems/(.+)$', 'get_all_loaned_items'),
-    ('^getBorrowedItem/(.+)$', 'get_borrowed_item'),
+    url(r'^getInventoryItem/(.+)$', 'get_inventory_item'),
+    url(r'^addInventoryItem/(.+)$', 'add_inventory_item'),
+    url(r'^getInventoryAll/(.+)$', 'get_inventory_all'),
+    
+    url(r'^getFriend/(.+)$', 'get_friend'),
+    url(r'^getAllFriends/(.+)$', 'get_all_friends'),
 
-    ('^getAllBorrowedItems/(.+)$', 'get_all_borrowed_items'),
-    ('^newLoan/(.+)$', 'new_loan'),
-    ('^newBorrow/(.+)$', 'new_borrow'),
-    ('^getAllDueDate/(.+)$', 'get_all_due_dates'),
-    ('^getUpcomingDueDates/(.+)$', 'get_upcoming_due_dates'),
+    url(r'^getBorrowedItem/(.+)$', 'get_borrowed_item'),
+    url(r'^getAllBorrowedItems/(.+)$', 'get_all_borrowed_items'),
+
+    url(r'^getLoanedItem/(.+)$', 'get_loaned_item'),
+#    url(r'^getLoanForItem/(.+)$', 'get_loan_for_item'),
+    url(r'^getAllLoanedItems/(.+)$', 'get_all_loaned_items'),
+    url(r'^newLoan/(.+)/(.+)$', 'new_loan'),
+
+    url(r'^getAllDueDate/(.+)$', 'get_all_due_dates'),
+    url(r'^getUpcomingDueDates/(.+)$', 'get_upcoming_due_dates'),
     
 )

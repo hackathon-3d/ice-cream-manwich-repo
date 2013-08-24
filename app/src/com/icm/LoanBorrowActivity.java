@@ -193,6 +193,13 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
 			@Override
 			protected void onPostExecute(ProductInfo result) {
 				
+				Log.i("LoanBorrowActivity", "Barcode info " + result);
+				
+				if(result == null)
+					return;
+				
+				Log.i("LoanBorrowActivity", "Barcode name " + result.name);
+				
 				barcodeTextView.setText(result.name);
 				super.onPostExecute(result);
 			}
