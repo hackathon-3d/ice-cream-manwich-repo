@@ -1,20 +1,14 @@
 package com.icm;
 
-import java.io.IOException;
-import java.net.URL;
-
-import com.nostra13.universalimageloader.core.ImageLoader;
-
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class QuickHistoryAdapter extends ArrayAdapter<QuickHistory.Item> {
 
@@ -39,10 +33,10 @@ public class QuickHistoryAdapter extends ArrayAdapter<QuickHistory.Item> {
 			view = layoutInflater.inflate(R.layout.history_list_item, parent);
 		}
 		
-		ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
+		ImageView imageView = (ImageView) view.findViewById(R.id.history_row_imageView);
 		ImageLoader.getInstance().displayImage(item.image.toString(), imageView);
 		
-		TextView nameView = (TextView) view.findViewById(R.id.bookNameView);
+		TextView nameView = (TextView) view.findViewById(R.id.history_row_bookNameView);
 		nameView.setText(item.name);
 		
 		TextView personView = (TextView) view.findViewById(R.id.history_row_personView);

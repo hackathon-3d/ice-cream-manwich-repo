@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:spinnersShown="true"
-        android:startYear="2013"android:editTextStyleandroid:editTextStyle
+        android:startYear="2013"
         android:calendarViewShown="false"
         android:layout_marginBottom="14dp"
         style="@style/DatePickerStyle" />
