@@ -1,5 +1,7 @@
 package com.icm;
 
+import java.util.concurrent.Future;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -23,6 +25,7 @@ import android.widget.ImageView;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.icm.products.ProductInfoManager;
 
 @ContentView(R.layout.activity_loan_borrow)
 public class LoanBorrowActivity extends RoboSherlockActivity {
@@ -41,6 +44,8 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     private String contactName;    
     private String contactNumber;  
     private String barcodeString;
+    
+    private ProductInfoManager productInfoManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,8 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         contactTextView.setOnClickListener(contactClickListener);
         scanButton.setOnClickListener(scanButtonClickListener);
         submitButton.setOnClickListener(submitButtonClickListener);
+        
+        productInfoManager = new ProductInfoManager(this); 
     }
 
     private final View.OnClickListener contactClickListener = new View.OnClickListener() {
@@ -113,12 +120,23 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
                 if (scanResult != null) { // don't be dumb user!
                     barcodeString = scanResult.getContents();
                     barcodeTextView.setText(barcodeString);
+                    
+                    loadBarcodeInformation();
                 }
             break;
         }
     }
     
-    public void postStuff(String phoneNumber){
+    private void loadBarcodeInformation() {
+		// TODO Auto-generated method stub
+    	
+    	Future<ProductInfo> productInfo = productInfoManager.getProductInfo(barcodeString);
+    	
+    	
+		
+	}
+
+	public void postStuff(String phoneNumber){
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost(Constants.newUserPostUrl(phoneNumber));
 
