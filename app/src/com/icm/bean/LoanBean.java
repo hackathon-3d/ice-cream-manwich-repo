@@ -6,5 +6,7 @@ public class LoanBean {
 	public String category;
 	public String dueDate;
 	
+	public String imageURL;
+	
 	
 }
