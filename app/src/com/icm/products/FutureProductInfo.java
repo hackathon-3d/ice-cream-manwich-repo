@@ -40,6 +40,8 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 		
 		Uri.Builder builder = new Uri.Builder();
 		
+		builder.scheme("https");
+		
 		builder.path(ProductInfoManager.BASE_URL);
 		builder.appendQueryParameter("key", ProductInfoManager.API_KEY);
 		builder.appendQueryParameter("country", ProductInfoManager.COUNTRY);
@@ -48,6 +50,8 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 		Uri uri = builder.build();
 				
 		BeanLoader.loadBean(ProductSearchResult.class, uri.toString(), this);
+		
+		Log.i("FutureProductInfo", "Fetching " + uri.toString());
 	}
 
 	@Override
@@ -64,6 +68,8 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 		{
 			this.wait(10000);
 		}
+		
+		Log.i("FutureProductInfo", "Getting " + barcodeNumber + " result " + info);
 		
 		products.put(barcodeNumber, info);
 		return info;
@@ -106,6 +112,8 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 			return;
 		}
 		
+		Log.i("FutureProductInfo", "Got " + resultList.size() + " results: " + barcodeNumber);
+		
 		for(ProductItem item : resultList)
 		{
 			if(item.description == null)
@@ -117,6 +125,8 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 			
 			info.name = item.description;
 			info.barcodeNumber = barcodeNumber;
+			
+			Log.i("FutureProductInfo", "item " + info.name + " barcode: " + barcodeNumber);
 			
 			for(ImageBean image : item.images)
 			{

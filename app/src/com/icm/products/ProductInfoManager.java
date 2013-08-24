@@ -10,7 +10,7 @@ import com.icm.ProductInfo;
 
 public class ProductInfoManager {
 	
-	public static final String BASE_URL = "https://www.googleapis.com/shopping/search/v1/public/products";
+	public static final String BASE_URL = "www.googleapis.com/shopping/search/v1/public/products";
 	
 	public static final String API_KEY = "AIzaSyDLbWae-NdyvQUNhXPzYQSQUUmH_o0IFp8";
 	public static final String COUNTRY = "US";

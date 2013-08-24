@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Log;
@@ -29,6 +30,7 @@ import com.actionbarsherlock.view.MenuItem;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.icm.bean.LoanBean;
 import com.icm.products.ProductInfoManager;
 
 
@@ -47,6 +49,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     @InjectView(R.id.media_editable_title)  EditText barcodeTextView;
     @InjectView(R.id.scan_button)           Button scanButton;
     @InjectView(R.id.loan_borrow_book_image)ImageView bookImageView;
+    @InjectView(R.id.manual_scan_button)    Button manualScanButton; 
     
     private String contactName;    
     private String contactNumber;  
@@ -62,6 +65,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         setTitle(title);
         contactTextView.setOnClickListener(contactClickListener);
         scanButton.setOnClickListener(scanButtonClickListener);
+        manualScanButton.setOnClickListener(manualScanButtonClickListener);
         productInfoManager = new ProductInfoManager(this); 
     }
     
@@ -96,6 +100,17 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
             integrator.initiateScan();
         }
     };
+    
+    private final View.OnClickListener manualScanButtonClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+        	
+        	barcodeString = barcodeTextView.getText().toString();
+        	
+            loadBarcodeInformation();
+        }
+    };
+
 
     private final MenuItem.OnMenuItemClickListener submitButtonClickListener = new MenuItem.OnMenuItemClickListener() {
         @Override
@@ -160,29 +175,46 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     private void loadBarcodeInformation() {
 		// TODO Auto-generated method stub
     	
-    	Future<ProductInfo> productInfo = productInfoManager.getProductInfo(barcodeString);
+    	final Future<ProductInfo> productInfo = productInfoManager.getProductInfo(barcodeString);
     	
-    	try {
-			ProductInfo info = productInfo.get();
-		} catch (InterruptedException e) {
-			Log.e("LoanBorrowActivity", "Interrupted", e);
-		} catch (ExecutionException e) {
-			Log.e("LoanBorrowActivity", "Execution exception", e);
-		}
+    	new AsyncTask<Void,Void,ProductInfo>() {
+
+    		@Override
+			protected ProductInfo doInBackground(Void... params) {
+				
+		    	try {
+					return productInfo.get();
+										
+				} catch (InterruptedException e) {
+					Log.e("LoanBorrowActivity", "Interrupted", e);
+				} catch (ExecutionException e) {
+					Log.e("LoanBorrowActivity", "Execution exception", e);
+				}
+		    	return null;
+			}
+
+			@Override
+			protected void onPostExecute(ProductInfo result) {
+				
+				barcodeTextView.setText(result.name);
+				super.onPostExecute(result);
+			}
+			
+			
+    	}.execute();
     	
+    
 		
 	}
 
 	public void postStuff(String phoneNumber){
-        HttpClient httpClient = new DefaultHttpClient();
-        HttpPost httpPost = new HttpPost(Constants.newUserPostUrl(phoneNumber));
-
-        try{
-            // no post params?
-            HttpResponse response = httpClient.execute(httpPost);
-        } catch(Exception e){
-            
-        }
+		
+		
+		LoanBean bean = new LoanBean();
+		bean.name = barcodeTextView.getText().toString();
+		bean.category = "Book";
+		bean.dueDate = dueDatePicker.getMonth() + "/" + dueDatePicker.getDayOfMonth() + "/" + dueDatePicker.getYear();
+		
     }
     
     public String getDevicePhoneNumber(){

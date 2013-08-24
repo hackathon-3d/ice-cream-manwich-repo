@@ -1,5 +1,6 @@
 package com.icm.pojo;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -30,13 +31,34 @@ public final class BeanLoader {
 			protected T doInBackground(Void... params) {
 				try 
 				{
+					
 					InputStream is = new URL(urlString).openStream();
 					InputStreamReader reader = new InputStreamReader(is);
-					return new Gson().fromJson(reader, beanClass);
+					BufferedReader br = new BufferedReader(reader);
+					
+				    try
+				    {
+						
+						String whole = "";
+						String next = br.readLine();
+						while(next != null)
+						{
+							whole += next;
+							next = br.readLine();
+						}
+						
+						return new Gson().fromJson(whole, beanClass);
+				    }
+				    finally
+				    {
+				    	if(br != null)
+				    		br.close();
+				    }
+
 				} 
 				catch (MalformedURLException e) 
 				{
-					Log.e("BeanLoader", "Exception loading bean", e);
+					Log.e("BeanLoader", "Malformed URL for bean", e);
 				}
 				catch (IOException e) 
 				{

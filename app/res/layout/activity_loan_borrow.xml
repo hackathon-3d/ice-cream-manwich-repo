@@ -41,9 +41,18 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_gravity="center_horizontal"
-        android:visibility="gone" >
+        android:hint="barcode"
+        >
 
     </EditText>
+    
+    <Button 
+        android:id="@+id/manual_scan_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Manual Scan"
+        />
     
     <ImageView
         android:id="@+id/loan_borrow_book_image"
