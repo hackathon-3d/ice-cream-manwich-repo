@@ -8,6 +8,9 @@ import roboguice.inject.InjectResource;
 import android.os.Bundle;
 import android.widget.ListAdapter;
 
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.SubMenu;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockListActivity;
 import com.icm.bean.LoanBean;
 
@@ -39,6 +42,15 @@ public class HistoryActivity extends RoboSherlockListActivity {
         ListAdapter adapter = new HistoryListAdapter(this, R.layout.history_list_item, beans);
         setListAdapter(adapter);
     }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return true;
+    }    
+
     
     
 
