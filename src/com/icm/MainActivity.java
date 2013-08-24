@@ -1,10 +1,10 @@
 package com.icm;
 
+import roboguice.activity.RoboActivity;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.Menu;
 
-public class MainActivity extends Activity {
+public class MainActivity extends RoboActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
