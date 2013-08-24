@@ -17,7 +17,6 @@ public class QuickHistoryLoader extends AsyncTaskLoader<QuickHistory> {
 		
 		
 		
-		
 		// TODO Auto-generated method stub
 		return null;
 	}
