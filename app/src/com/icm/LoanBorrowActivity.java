@@ -90,9 +90,8 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
                         c.close();
                     }
                 }
-                
-            break; //break dat code;
             }
+            break; //break dat code;
         default: // cause xzing library doesn't allow an activity request code in its library
                 IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
                 if (scanResult != null) { // don't be dumb user!
