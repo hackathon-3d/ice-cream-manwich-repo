@@ -18,7 +18,7 @@ class LibraryUser(models.Model):
     
     objects=LibraryUserManager()
     
-class MediaItemManager(models.Model):
+class MediaItemManager(models.Manager):
     def create_media_item(self, user, name, category=None):
         mediaItem=self.create(user=user, name=name, category=category)
         return mediaItem
@@ -30,27 +30,33 @@ class MediaItem(models.Model):
     
     objects=MediaItemManager()
     
-class LoanItemManager(models.Model):
+class LoanItemManager(models.Manager):
     def create_loan_item(self, item, dueDate):
         loanItem=self.create(item=item, dueDate=dueDate)
         return loanItem
 
 class LoanItem(models.Model):
+    user=models.ForeignKey(LibraryUser)
     item=models.ForeignKey(MediaItem)
     loanDate=models.DateField(auto_now_add=True)
     dueDate = models.DateField(max_length=50, blank=True)
 
     objects=LoanItemManager()
     
-class BorrowItemManager(models.Model):
+class BorrowItemManager(models.Manager):
     def create_borrow_item(self, item, dueDate):
         borrowItem=self.create(item=item, dueDate=dueDate)
         return borrowItem
 
 class BorrowItem(models.Model):
+    user=models.ForeignKey(LibraryUser)
     item=models.ForeignKey(MediaItem)
     loanDate=models.DateField(auto_now_add=True)
     dueDate = models.DateField(max_length=50, blank=True)
     
     objects=BorrowItemManager()
     
+class FriendConnection(models.Model):
+    user1 = models.ForeignKey(LibraryUser, related_name='connections')
+    user2 = models.ForeignKey(LibraryUser, related_name='reverse_connections')
+

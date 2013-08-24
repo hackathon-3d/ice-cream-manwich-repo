@@ -8,13 +8,16 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('src', 
 
-    ('^newUser/(.+)$', 'new_user'),
+    ('^newUser$', 'new_user'),
                        
-    ('^getInventory/(.+)$', 'get_inventory'),
+    ('^getInventoryItem/(.+)$', 'get_inventory_item'),
     ('^addInventoryItem/(.+)$', 'add_inventory_item'),
+    ('^getInventoryAll/(.+)$', 'get_inventory_all'),
+    
     ('^getFriend/(.+)$', 'get_friend'),
     ('^getAllFriends/(.+)$', 'get_all_friends'),
     ('^getLoanedItem/(.+)$', 'get_loaned_item'),
+
     ('^getAllLoanedItems/(.+)$', 'get_all_loaned_items'),
     ('^getBorrowedItem/(.+)$', 'get_borrowed_item'),
 
