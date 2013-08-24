@@ -71,6 +71,7 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 
 		quickHistoryAdapter.clear();
 		quickHistoryAdapter.addAll(data.getCollection());
+		quickHistoryAdapter.notifyDataSetChanged();
 		
 	}
 
@@ -78,6 +79,7 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 	public void onLoaderReset(Loader<QuickHistory> loader) {
 
 		quickHistoryAdapter.clear();
+		quickHistoryAdapter.notifyDataSetChanged();
 		
 		
 	}
