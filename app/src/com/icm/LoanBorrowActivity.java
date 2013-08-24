@@ -29,6 +29,7 @@ import com.icm.bean.LoanBean;
 import com.icm.bean.PersonBean;
 import com.icm.pojo.BeanPoster;
 import com.icm.products.ProductInfoManager;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 
 
@@ -201,6 +202,10 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
 				Log.i("LoanBorrowActivity", "Barcode name " + result.name);
 				
 				barcodeTextView.setText(result.name);
+				
+				
+				ImageLoader.getInstance().displayImage(result.imageUrl.toString(), bookImageView);
+				
 				super.onPostExecute(result);
 			}
 			
