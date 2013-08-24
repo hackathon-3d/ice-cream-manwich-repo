@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/crewspotr/!svn/ver/268/trunk/libs/django/contrib/admin
+END
+filters.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/filters.py
+END
+validation.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/validation.py
+END
+options.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/options.py
+END
+util.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/util.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/__init__.py
+END
+actions.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/actions.py
+END
+helpers.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/helpers.py
+END
+tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/tests.py
+END
+models.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/models.py
+END
+widgets.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/widgets.py
+END
+forms.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/forms.py
+END
+sites.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/sites.py
+END

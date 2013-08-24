@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/management
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/management/base.py
+END
+validation.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/management/validation.py
+END
+color.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/core/management/color.py
+END
+templates.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/management/templates.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/management/__init__.py
+END
+sql.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/management/sql.py
+END

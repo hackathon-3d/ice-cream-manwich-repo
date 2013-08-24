@@ -1,0 +1,107 @@
+10
+
+dir
+274
+http://xp-dev.com/svn/crewspotr/trunk/libs/django/contrib
+http://xp-dev.com/svn/crewspotr
+
+
+
+2013-06-22T20:27:23.948668Z
+268
+awrichar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+849e35e5-2d67-4ebe-ac06-e8fa68b547d7
+
+humanize
+dir
+
+gis
+dir
+
+formtools
+dir
+
+sitemaps
+dir
+
+__init__.py
+file
+
+
+
+
+2013-06-26T04:59:06.974800Z
+d41d8cd98f00b204e9800998ecf8427e
+2013-06-22T19:20:14.252914Z
+266
+awrichar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+sites
+dir
+
+admin
+dir
+
+databrowse
+dir
+
+csrf
+dir
+
+contenttypes
+dir
+
+auth
+dir
+
+localflavor
+dir
+
+sessions
+dir
+
+flatpages
+dir
+
+messages
+dir
+
+staticfiles
+dir
+

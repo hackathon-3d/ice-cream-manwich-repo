@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/template/loaders
+END
+app_directories.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/template/loaders/app_directories.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/template/loaders/__init__.py
+END
+filesystem.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/template/loaders/filesystem.py
+END
+eggs.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/template/loaders/eggs.py
+END
+cached.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/template/loaders/cached.py
+END

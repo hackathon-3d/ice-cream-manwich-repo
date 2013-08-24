@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/gis/db/backends/oracle
+END
+compiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/gis/db/backends/oracle/compiler.py
+END
+operations.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/gis/db/backends/oracle/operations.py
+END

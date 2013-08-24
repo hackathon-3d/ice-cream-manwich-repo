@@ -1,0 +1,107 @@
+10
+
+dir
+274
+http://xp-dev.com/svn/crewspotr/trunk/libs/django
+http://xp-dev.com/svn/crewspotr
+
+
+
+2013-06-22T20:27:23.948668Z
+268
+awrichar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+849e35e5-2d67-4ebe-ac06-e8fa68b547d7
+
+test
+dir
+
+http
+dir
+
+db
+dir
+
+conf
+dir
+
+forms
+dir
+
+__init__.py
+file
+
+
+
+
+2013-06-26T04:59:10.430800Z
+833afc30dc019f1e75a05af03bb82a32
+2013-06-22T20:25:28.149991Z
+267
+awrichar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1007
+
+core
+dir
+
+templatetags
+dir
+
+views
+dir
+
+shortcuts
+dir
+
+dispatch
+dir
+
+utils
+dir
+
+contrib
+dir
+
+bin
+dir
+
+template
+dir
+
+middleware
+dir
+

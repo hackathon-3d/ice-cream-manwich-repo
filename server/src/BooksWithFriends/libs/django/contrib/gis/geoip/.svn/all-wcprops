@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/gis/geoip
+END
+prototypes.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/gis/geoip/prototypes.py
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/gis/geoip/base.py
+END
+libgeoip.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/gis/geoip/libgeoip.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/gis/geoip/__init__.py
+END
