@@ -33,6 +33,7 @@ public class LoanPoster extends AsyncTask<LoanBean, Void, Void> implements BeanP
 			postBody.putString("name", bean.name);
 			// postBody.putString("category", bean.category);
 			postBody.putString("dueDate", bean.dueDate);
+			postBody.putString("imageURL", bean.imageURL);
 			
 			
 			String url = Constants.postNewLoanUrl(fromId, toId);

@@ -118,19 +118,22 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 		
 		for(ProductItem item : resultList)
 		{
-			if(item.title == null)
+			if(item.product == null)
 				continue;
-			if(item.images == null)
+			
+			Log.i("FutureProductInfo", "Item " + item.product.title + " images " + item.product.images);
+			
+			if(item.product.title == null)
+				continue;
+			if(item.product.images == null)
 				continue;
 			
 			ProductInfo info = new ProductInfo();
 			
-			info.name = item.title;
+			info.name = item.product.title;
 			info.barcodeNumber = barcodeNumber;
 			
-			Log.i("FutureProductInfo", "item " + info.name + " barcode: " + barcodeNumber);
-			
-			for(ImageBean image : item.images)
+			for(ImageBean image : item.product.images)
 			{
 				if(image.link == null)
 					continue;

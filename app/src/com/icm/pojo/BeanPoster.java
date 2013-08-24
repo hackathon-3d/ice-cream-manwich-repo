@@ -91,8 +91,12 @@ public final class BeanPoster {
 	    
 	    httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
+	    Log.i("BeanPoster", "Posting " + urlString);
+	    
 	    // Execute HTTP Post Request
 	    HttpResponse response = httpclient.execute(httppost);
+	    
+	    Log.i("BeanPoster", "Retrieving post result");
 	    
 		InputStream is = response.getEntity().getContent();
 		InputStreamReader reader = new InputStreamReader(is);
@@ -108,6 +112,8 @@ public final class BeanPoster {
 				whole += next;
 				next = br.readLine();
 			}
+			
+			Log.i("BeanPoster", "Post result: " + whole);
 			
 			return new Gson().fromJson(whole, beanClass);
 	    }

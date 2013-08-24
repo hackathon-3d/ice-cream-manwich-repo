@@ -35,29 +35,20 @@ public final class BeanLoader {
 					
 					InputStream is = new URL(urlString).openStream();
 					InputStreamReader reader = new InputStreamReader(is);
-					BufferedReader br = new BufferedReader(reader);
 					
-					String whole = "";
 				    try
 				    {
-						String next = br.readLine();
-						while(next != null)
-						{
-							whole += next;
-							next = br.readLine();
-						}
-						
-						return new Gson().fromJson(whole, beanClass);
+						return new Gson().fromJson(reader, beanClass);
 				    }
 				    catch(JsonParseException e)
 				    {
-				    	Log.e("BeanLoader", "Bad JSON: " + whole);
+				    	Log.e("BeanLoader", "Bad JSON: " + e.getMessage());
 				    	throw e;
 				    }
 				    finally
 				    {
-				    	if(br != null)
-				    		br.close();
+				    	if(reader != null)
+				    		reader.close();
 				    }
 
 				} 

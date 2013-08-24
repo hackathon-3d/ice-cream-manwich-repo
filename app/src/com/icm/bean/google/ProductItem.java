@@ -7,9 +7,6 @@ public class ProductItem {
 	public String kind;
 	public String id;
 	
-	public String title;
-	public String description;
-	
-	public List<ImageBean> images;
+	public InnerProductBean product;
 	
 }
