@@ -1,12 +1,11 @@
 package com.icm;
 
-import java.net.URL;
-
-import android.content.AsyncTaskLoader;
 import android.content.Context;
 import android.net.Uri;
 
-public class ProductInfoLoader extends AsyncTaskLoader<ProductInfo> {
+import com.icm.pojo.BeanLoader;
+
+public abstract class ProductInfoLoader extends BeanLoader<ProductInfo> {
 
 	public static final String BASE_URL = "https://www.googleapis.com/shopping/search/v1/public/products";
 	
@@ -16,16 +15,13 @@ public class ProductInfoLoader extends AsyncTaskLoader<ProductInfo> {
 	public final String barcodeNumber;
 	
 	public ProductInfoLoader(Context context, String barcodeNumber) {
-		super(context);
+		super(context, ProductInfo.class, getURL(barcodeNumber));
 		
 		this.barcodeNumber = barcodeNumber;
 	}
-
-	@Override
-	public ProductInfo loadInBackground() {
-		
-		URL url = new URL(BASE_URL);
-		
+	
+	public static String getURL(String barcodeNumber)
+	{
 		Uri.Builder builder = new Uri.Builder();
 		
 		builder.path(BASE_URL);
@@ -33,11 +29,12 @@ public class ProductInfoLoader extends AsyncTaskLoader<ProductInfo> {
 		builder.appendQueryParameter("country", COUNTRY);
 		builder.appendQueryParameter("q", barcodeNumber);
 		
-		
-		
-		// TODO Auto-generated method stub
-		return null;
+		Uri uri = builder.build();
+		return uri.toString();
 	}
+
+	@Override
+	public abstract void deliverResult(ProductInfo item);
 
 
 }
