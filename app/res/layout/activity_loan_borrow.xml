@@ -18,51 +18,42 @@
         android:hint="@string/loan_borrow_contact_hint"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <ImageView
+        android:id="@+id/loan_borrow_book_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/media_editable_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/abs__ab_bottom_solid_dark_holo" />
+
     <Button
         android:id="@+id/scan_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/contact_name_input"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
+        android:layout_alignLeft="@+id/media_editable_title"
+        android:layout_centerVertical="true"
         android:text="@string/scan_media_button" />
 
     <EditText
         android:id="@+id/media_editable_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/scan_button"
+        android:layout_below="@+id/contact_name_input"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName" >
 
-    <ImageView
-        android:id="@+id/loan_borrow_book_image"
+        <requestFocus />
+    </EditText>
+
+    <DatePicker
+        android:id="@+id/dueDatePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/due_date_edit_text"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:src="@drawable/abs__ab_bottom_solid_dark_holo" />
-
-    <EditText
-        android:id="@+id/due_date_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/media_editable_title"
-        android:layout_below="@+id/media_editable_title"
-        android:layout_marginTop="18dp"
-        android:ems="10"
-        android:inputType="date" />
-
-    <Button
-        android:id="@+id/loan_borrow_submit_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/loan_borrow_book_image"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="@string/submit" />
+        android:layout_marginBottom="14dp" />
 
 </RelativeLayout>

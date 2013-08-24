@@ -7,6 +7,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectExtra;
+import roboguice.inject.InjectResource;
 import roboguice.inject.InjectView;
 import android.app.Activity;
 import android.content.Intent;
@@ -17,12 +18,17 @@ import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+
 
 @ContentView(R.layout.activity_loan_borrow)
 public class LoanBorrowActivity extends RoboSherlockActivity {
@@ -31,12 +37,12 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     private static final int PICK_CONTACT_INTENT  = 1234; // arbitrary!
     
     @InjectExtra(TITLE_INTENT)              String title;
+    @InjectResource(R.string.share_text)    String shareText;
     @InjectView(R.id.contact_name_input)    EditText contactTextView;
-    @InjectView(R.id.due_date_edit_text)    EditText dueDateTextView;
+    @InjectView(R.id.dueDatePicker)         DatePicker dueDatePicker;
     @InjectView(R.id.media_editable_title)  EditText barcodeTextView;
     @InjectView(R.id.scan_button)           Button scanButton;
     @InjectView(R.id.loan_borrow_book_image)ImageView bookImageView;
-    @InjectView(R.id.loan_borrow_submit_button)Button submitButton;
     
     private String contactName;    
     private String contactNumber;  
@@ -48,9 +54,15 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         setTitle(title);
         contactTextView.setOnClickListener(contactClickListener);
         scanButton.setOnClickListener(scanButtonClickListener);
-        submitButton.setOnClickListener(submitButtonClickListener);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuItem shareMenuItem = menu.add(shareText);
+        shareMenuItem.setOnMenuItemClickListener(submitButtonClickListener);
+        return true;
+    }
+    
     private final View.OnClickListener contactClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -67,10 +79,11 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         }
     };
 
-    private final View.OnClickListener submitButtonClickListener = new View.OnClickListener() {
+    private final MenuItem.OnMenuItemClickListener submitButtonClickListener = new MenuItem.OnMenuItemClickListener() {
         @Override
-        public void onClick(View v) {
+        public boolean onMenuItemClick(MenuItem item) {
             postStuff(contactNumber);
+            return true;
         }
     };
 
