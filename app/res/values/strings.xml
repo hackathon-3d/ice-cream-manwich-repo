@@ -8,5 +8,6 @@
     <string name="loan_title">Loan a book</string>
     <string name="borrow_title">Borrow a book</string>
     <string name="scan_media_button">Scan</string>
+    <string name="loan_borrow_contact_hint">Enter your friend\'s name</string>
 
 </resources>
