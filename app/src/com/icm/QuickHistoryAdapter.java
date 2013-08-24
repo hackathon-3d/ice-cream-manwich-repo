@@ -3,6 +3,8 @@ package com.icm;
 import java.io.IOException;
 import java.net.URL;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -38,18 +40,7 @@ public class QuickHistoryAdapter extends ArrayAdapter<QuickHistory.Item> {
 		}
 		
 		ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-		
-		try
-		{
-			URL url = item.image; 
-			Bitmap icon = BitmapFactory.decodeStream(url.openConnection().getInputStream()); 
-			imageView.setImageBitmap(icon);
-		}
-		catch(IOException ex)
-		{
-			Log.e("QuickHistoryAdapter", "Exception loading image from URL", ex);
-		}
-		
+		ImageLoader.getInstance().displayImage(item.image.toString(), imageView);
 		
 		TextView nameView = (TextView) view.findViewById(R.id.bookNameView);
 		nameView.setText(item.name);

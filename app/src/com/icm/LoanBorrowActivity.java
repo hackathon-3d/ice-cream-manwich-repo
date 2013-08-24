@@ -182,7 +182,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     {
 		// Get the username from the phone number
 		String phonenumber = Constants.getDevicePhoneNumber(this);
-		String url = Constants.newUserPostUrl("555-555-1234");
+		String url = Constants.newUserPostUrl(phonenumber);
 		
 		Bundle postBody = new Bundle();
 		postBody.putString("name", "Big Mike");
