@@ -26,6 +26,7 @@ urlpatterns = patterns('src.views',
     url(r'^getAllLoanedItems/(.+)$', 'get_all_loaned_items'),
     url(r'^newLoan/(.+)/(.+)$', 'new_loan'),
 
+    url(r'^getHistory/(.+)$', 'get_history'),
     url(r'^getAllDueDate/(.+)$', 'get_all_due_dates'),
     url(r'^getUpcomingDueDates/(.+)$', 'get_upcoming_due_dates'),
     
