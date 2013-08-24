@@ -3,11 +3,6 @@ package com.icm;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectExtra;
 import roboguice.inject.InjectView;
@@ -31,6 +26,8 @@ import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivit
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.icm.bean.LoanBean;
+import com.icm.bean.PersonBean;
+import com.icm.pojo.BeanPoster;
 import com.icm.products.ProductInfoManager;
 
 
@@ -208,16 +205,47 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
 	}
 
 	public void postStuff(String phoneNumber){
+		Log.i("LoanBorrowActivity", "Getting friend id " + phoneNumber);
 		
+		// Create a username for the friend
+		String url = Constants.newUserPostUrl(phoneNumber);
+		
+		Bundle postBody = new Bundle();
+		postBody.putString("name", this.contactName);
+		postBody.putString("phone", phoneNumber);
+		postBody.putString("email", "noone@example.com");
+		
+		BeanPoster.postBean(PersonBean.class, url, postBody, new BeanPoster.Callback<PersonBean>() {
+			@Override
+			public void beanPosted(PersonBean bean) {
+				
+				Log.i("LoanBorrowActivity", "Friend ID is " + bean.user_id);
+				int friendId = bean.user_id;
+				
+				postLoanStuff(friendId);
+			}
+		});
+		
+    }
+    
+    protected void postLoanStuff(int friendId) {
+		Log.i("LoanBorrowActivity", "posting new loan stuff");
+    	
+    	String fromId = getDevicePhoneNumber();
+		String toId = Integer.toString(friendId);
 		
 		LoanBean bean = new LoanBean();
 		bean.name = barcodeTextView.getText().toString();
 		bean.category = "Book";
 		bean.dueDate = dueDatePicker.getMonth() + "/" + dueDatePicker.getDayOfMonth() + "/" + dueDatePicker.getYear();
 		
-    }
-    
-    public String getDevicePhoneNumber(){
+		LoanPoster loanPoster = new LoanPoster(fromId, toId);
+		
+		loanPoster.execute(bean);
+
+	}
+
+	public String getDevicePhoneNumber(){
         return Constants.getDevicePhoneNumber(this);
     }
     
