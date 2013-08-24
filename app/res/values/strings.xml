@@ -11,8 +11,9 @@
     <string name="loan_borrow_contact_hint">Enter your friend\'s name</string>
     <string name="submit_loan_text">Loan this book</string>
     <string name="submit_borrow_text">Borrow this book</string>
-    <string name="title_activity_history">HistoryActivity</string>
-    <string name="title_activity_library">LibraryActivity</string>
+    <string name="title_activity_history">History</string>
+    <string name="title_activity_library">Library</string>
+    <string name="manual_barcode_text">Use current barcode</string>
     <string-array name="default_history_item_titles">
         <item>Ender\'s Game</item>
         <item>The Inn at Rose Harbor</item>

@@ -17,7 +17,7 @@
         <LinearLayout
             android:id="@+id/history_linear_layout"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@+id/history_row_dateView"
             android:orientation="vertical" >
@@ -26,7 +26,8 @@
                 android:id="@+id/history_row_bookNameView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Book Name" />
+                android:text="Book Name"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
                 android:id="@+id/history_row_personView"
@@ -34,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dip"
                 android:text="Person Name" />
+
         </LinearLayout>
         
 	    <TextView

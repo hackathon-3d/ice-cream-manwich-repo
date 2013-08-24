@@ -16,13 +16,11 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 public class HistoryListAdapter extends ArrayAdapter<LoanBean> {
 
     private final LayoutInflater layoutInflator;
-    private final List<LoanBean> beans;
     private final int resource = R.layout.history_list_item;
 
     public HistoryListAdapter(Activity context, int resource, List<LoanBean> objects) {
         super(context, resource, objects);
         this.layoutInflator = context.getLayoutInflater();
-        this.beans = objects;
     }
 
     @Override

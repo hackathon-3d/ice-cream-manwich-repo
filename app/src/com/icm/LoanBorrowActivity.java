@@ -5,6 +5,7 @@ import java.util.concurrent.Future;
 
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectExtra;
+import roboguice.inject.InjectResource;
 import roboguice.inject.InjectView;
 import android.app.Activity;
 import android.content.Intent;
@@ -19,10 +20,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.SubMenu;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -48,7 +49,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     @InjectView(R.id.media_editable_title)  EditText barcodeTextView;
     @InjectView(R.id.scan_button)           Button scanButton;
     @InjectView(R.id.loan_borrow_book_image)ImageView bookImageView;
-    @InjectView(R.id.manual_scan_button)    Button manualScanButton; 
+    @InjectResource(R.string.manual_barcode_text)String manualBarcodeText;
     
     private String contactName;    
     private String contactNumber;  
@@ -69,7 +70,6 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         setTitle(title);
         contactTextView.setOnClickListener(contactClickListener);
         scanButton.setOnClickListener(scanButtonClickListener);
-        manualScanButton.setOnClickListener(manualScanButtonClickListener);
         productInfoManager = new ProductInfoManager(this); 
         
         getMyUserId();
@@ -88,6 +88,12 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         MenuItem submitMenuItem = menu.add(submitText);
         submitMenuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         submitMenuItem.setOnMenuItemClickListener(submitButtonClickListener);
+        
+        SubMenu more = menu.addSubMenu("More");
+        more.getItem().setIcon(android.R.drawable.ic_menu_more);
+        more.getItem().setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        MenuItem manualBarcode = more.add(manualBarcodeText);
+        manualBarcode.setOnMenuItemClickListener(manualScanButtonClickListener);
         return true;
     }
     
@@ -107,13 +113,14 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         }
     };
     
-    private final View.OnClickListener manualScanButtonClickListener = new View.OnClickListener() {
+    private final MenuItem.OnMenuItemClickListener manualScanButtonClickListener = new MenuItem.OnMenuItemClickListener() {
         @Override
-        public void onClick(View v) {
+        public boolean onMenuItemClick(MenuItem item) {
         	
         	barcodeString = barcodeTextView.getText().toString();
         	
             loadBarcodeInformation();
+            return true;
         }
     };
 
