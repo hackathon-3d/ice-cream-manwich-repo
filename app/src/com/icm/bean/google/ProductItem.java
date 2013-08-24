@@ -10,6 +10,6 @@ public class ProductItem {
 	public String title;
 	public String description;
 	
-	public List<ImagesBean> images;
+	public List<ImageBean> images;
 	
 }

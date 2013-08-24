@@ -1,5 +1,8 @@
 package com.icm.products;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -8,11 +11,15 @@ import java.util.concurrent.TimeoutException;
 
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
 
 import com.icm.ProductInfo;
+import com.icm.bean.google.ImageBean;
+import com.icm.bean.google.ProductItem;
+import com.icm.bean.google.ProductSearchResult;
 import com.icm.pojo.BeanLoader;
 
-public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callback<ProductInfo>
+public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callback<ProductSearchResult>
 {
 
 	private final Map<String,ProductInfo> products;
@@ -27,6 +34,10 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 		this.products = products;
 		this.barcodeNumber = barcodeNumber;
 		
+		info = products.get(barcodeNumber);
+		if(info != null)
+			return;
+		
 		Uri.Builder builder = new Uri.Builder();
 		
 		builder.path(ProductInfoManager.BASE_URL);
@@ -36,7 +47,7 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 		
 		Uri uri = builder.build();
 				
-		BeanLoader.loadBean(ProductInfo.class, uri.toString(), this);
+		BeanLoader.loadBean(ProductSearchResult.class, uri.toString(), this);
 	}
 
 	@Override
@@ -49,14 +60,12 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 	public synchronized ProductInfo get() throws InterruptedException,
 			ExecutionException {
 		
-		int timeout = 10;
-		
-		if((info == null) && (timeout > 0))
+		if(info == null)
 		{
-			this.wait(1000);
-			--timeout;
+			this.wait(10000);
 		}
 		
+		products.put(barcodeNumber, info);
 		return info;
 	}
 
@@ -79,10 +88,59 @@ public class FutureProductInfo implements Future<ProductInfo>, BeanLoader.Callba
 	}
 
 	@Override
-	public synchronized void beanLoaded(ProductInfo item) {
-		products.put(barcodeNumber,item);
+	public synchronized void beanLoaded(ProductSearchResult searchResult) {
 		
-		this.info = item;
+		List<ProductItem> resultList = searchResult.items;
+		
+		if(resultList == null)
+		{
+			Log.e("FutureProductInfo", "resultList null in response: " + barcodeNumber);
+			this.notifyAll();
+			return;
+		}
+		
+		if(resultList.isEmpty())
+		{
+			Log.e("FutureProductInfo", "resultList empty: " + barcodeNumber);
+			this.notifyAll();
+			return;
+		}
+		
+		for(ProductItem item : resultList)
+		{
+			if(item.description == null)
+				continue;
+			if(item.images == null)
+				continue;
+			
+			ProductInfo info = new ProductInfo();
+			
+			info.name = item.description;
+			info.barcodeNumber = barcodeNumber;
+			
+			for(ImageBean image : item.images)
+			{
+				if(image.link == null)
+					continue;
+				
+				try 
+				{
+					info.imageUrl = new URL(image.link);
+				} catch (MalformedURLException e) {
+					Log.w("FutureProductInfo", "Unable to parse url in response", e);
+				}
+			}
+			
+			if(info.imageUrl == null)
+				continue;
+		
+			
+			this.info = info;
+			this.notifyAll();
+			return;
+		}
+		
+		
 		this.notifyAll();
 	}
 	
