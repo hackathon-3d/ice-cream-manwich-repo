@@ -2,7 +2,9 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#242e3b"
+     >
 
     <ImageView
         android:id="@+id/history_row_imageView"
@@ -12,7 +14,8 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+         >
 
         <LinearLayout
             android:id="@+id/history_linear_layout"
@@ -20,7 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@+id/history_row_dateView"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+             >
 
             <TextView
                 android:id="@+id/history_row_bookNameView"
