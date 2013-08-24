@@ -84,11 +84,13 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 	}
 	
 	public void onHistoryButtonClick(View view) {
-		
+		Intent intent = new Intent(this, HistoryActivity.class);
+		startActivity(intent);
 	}
 	
 	public void onLibraryButtonClick(View view) {
-		
+	    Intent intent = new Intent(this, LibraryActivity.class);
+        startActivity(intent);
 	}
 
 	@Override

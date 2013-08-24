@@ -13,5 +13,13 @@
     <string name="submit_borrow_text">Borrow this book</string>
     <string name="title_activity_history">HistoryActivity</string>
     <string name="title_activity_library">LibraryActivity</string>
+    <string-array name="default_history_items">
+        <item>Ender\'s Game</item>
+        <item>The Inn at Rose Harbor</item>
+        <item>A Game of Thrones</item>
+        <item>The Tombs</item>
+        <item>Low Pressure</item>
+        <item>A Clash of Kings</item>
+    </string-array>
 
 </resources>
