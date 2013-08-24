@@ -37,7 +37,7 @@ public class QuickHistoryAdapter extends ArrayAdapter<QuickHistory.Item> {
 			view = layoutInflater.inflate(R.layout.history_list_item, parent);
 		}
 		
-		ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
+		ImageView imageView = (ImageView) view.findViewById(R.id.history_row_imageView);
 		
 		try
 		{
@@ -51,13 +51,13 @@ public class QuickHistoryAdapter extends ArrayAdapter<QuickHistory.Item> {
 		}
 		
 		
-		TextView nameView = (TextView) view.findViewById(R.id.bookNameView);
+		TextView nameView = (TextView) view.findViewById(R.id.history_row_bookNameView);
 		nameView.setText(item.name);
 		
-		TextView personView = (TextView) view.findViewById(R.id.personView);
+		TextView personView = (TextView) view.findViewById(R.id.history_row_personView);
 		personView.setText(item.person);
 		
-		TextView dateView = (TextView) view.findViewById(R.id.dateView);
+		TextView dateView = (TextView) view.findViewById(R.id.history_row_dateView);
 		dateView.setText(item.date);
 		
 		return view;

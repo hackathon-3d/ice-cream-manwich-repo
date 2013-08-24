@@ -13,13 +13,40 @@
     <string name="submit_borrow_text">Borrow this book</string>
     <string name="title_activity_history">HistoryActivity</string>
     <string name="title_activity_library">LibraryActivity</string>
-    <string-array name="default_history_items">
+    <string-array name="default_history_item_titles">
         <item>Ender\'s Game</item>
         <item>The Inn at Rose Harbor</item>
         <item>A Game of Thrones</item>
         <item>The Tombs</item>
         <item>Low Pressure</item>
         <item>A Clash of Kings</item>
+    </string-array>
+    
+        <string-array name="default_history_images">
+        <item>http://ecx.images-amazon.com/images/I/51CLy8Z0zwL._SY346_PJlook-inside-v2,TopRight,1,0_SH20_.jpg</item>
+        <item>http://ecx.images-amazon.com/images/I/51T%2BL95HGPL._SY346_PJlook-inside-v2,TopRight,1,0_SH20_.jpg</item>
+        <item>http://ecx.images-amazon.com/images/I/51Pt0xzskNL._SY346_PJlook-inside-v2,TopRight,1,0_SH20_.jpg</item>
+        <item>http://ecx.images-amazon.com/images/I/51dbW7ap9%2BL._SY346_PJlook-inside-v2,TopRight,1,0_SH20_.jpg</item>
+        <item>http://ecx.images-amazon.com/images/I/51vGe7zDGRL._SY346_PJlook-inside-v2,TopRight,1,0_SH20_.jpg</item>
+        <item>http://ecx.images-amazon.com/images/I/51o2UG3sp3L._SY346_PJlook-inside-v2,TopRight,1,0_SH20_.jpg</item>
+    </string-array>
+    
+     <string-array name="default_history_dueDates">
+        <item>08/24/13</item>
+        <item>08/25/13</item>
+        <item>08/30/13</item>
+        <item>09/03/13</item>
+        <item>09/10/13</item>
+        <item>09/15/13</item>
+    </string-array>
+    
+    <string-array name="default_history_people">
+        <item>Mike Senn</item>
+        <item>Xander Dale</item>
+        <item>Matt Senn</item>
+        <item>Amanda Hodges</item>
+        <item>Phillip Senn</item>
+        <item>Dr. Pepper</item>
     </string-array>
 
 </resources>
