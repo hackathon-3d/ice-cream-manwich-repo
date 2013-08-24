@@ -240,11 +240,13 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
 				
 				Log.i("LoanBorrowActivity", "Barcode name " + result.name);
 				
+				barcodeTextView.setVisibility(View.VISIBLE);
 				barcodeTextView.setText(result.name);
 				
 				LoanBorrowActivity.this.imageURL = result.imageUrl.toString();
 				
 				ImageLoader.getInstance().displayImage(result.imageUrl.toString(), bookImageView);
+				bookImageView.setVisibility(View.VISIBLE);
 				
 				super.onPostExecute(result);
 			}

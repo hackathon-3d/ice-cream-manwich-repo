@@ -21,6 +21,7 @@
         android:layout_marginTop="19dp"
         android:hint="@string/loan_borrow_contact_hint"
         android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceLarge" >
         
         <requestFocus />
@@ -28,37 +29,39 @@
 
     <EditText
         android:id="@+id/media_editable_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="barcode"
-        android:inputType="textPersonName" />
+        android:gravity="center"
+        android:hint="Enter barcode or scan"
+        android:inputType="textPersonName"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/scan_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="14dp"
         android:text="@string/scan_media_button" />
     
     <ImageView
         android:id="@+id/loan_borrow_book_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/abs__ab_bottom_solid_dark_holo" />
+        android:layout_marginTop="18dp"
+        android:visibility="gone" />
 
     <DatePicker
         android:id="@+id/dueDatePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:spinnersShown="true"
+        android:layout_marginTop="20dp"
         android:calendarViewShown="false"
-        android:layout_marginBottom="14dp" />
+        android:spinnersShown="true" />
 
 </LinearLayout>
 </ScrollView>
