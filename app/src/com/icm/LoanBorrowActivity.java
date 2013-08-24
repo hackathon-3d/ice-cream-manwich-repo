@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -29,6 +30,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     @InjectView(R.id.due_date_edit_text)    EditText dueDateTextView;
     @InjectView(R.id.media_editable_title)  EditText barcodeTextView;
     @InjectView(R.id.scan_button)           Button scanButton;
+    @InjectView(R.id.loan_borrow_book_image)ImageView bookImageView;
     
     private String contactName;    
     private String contactNumber;  
@@ -100,5 +102,9 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
                 }
             break;
         }
+    }
+    
+    private void setBookImage(String url){
+
     }
 }
