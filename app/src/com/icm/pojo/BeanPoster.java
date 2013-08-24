@@ -42,17 +42,24 @@ public final class BeanPoster {
 
 			@Override
 			protected T doInBackground(Void... params) {
+				
+				Log.i("BeanPoster", "Posting to " + urlString);
+				
 				try 
 				{
 					return postData(beanClass, urlString, postBody);
 				} 
 				catch (MalformedURLException e) 
 				{
-					Log.e("BeanLoader", "Exception loading bean", e);
+					Log.e("BeanPoster", "Exception loading bean", e);
 				}
 				catch (IOException e) 
 				{
-					Log.e("BeanLoader", "Exception loading bean", e);
+					Log.e("BeanPoster", "Exception loading bean", e);
+				}
+				catch(Exception e)
+				{
+					Log.e("BeanPoster", "Terrible exception loading bean", e);
 				}
 
 				return null;

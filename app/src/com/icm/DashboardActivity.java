@@ -51,6 +51,9 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 			@Override
 			public void beanPosted(PersonBean bean) {
 				
+				if(bean == null)
+					return;
+				
 				DashboardActivity.this.userid = bean.user_id;
 				
 				getLoaderManager().initLoader(LOADER_QUICK_HISTORY, null, DashboardActivity.this);
