@@ -54,14 +54,14 @@
 		    <Button
 		        android:id="@+id/historyButton"
 	            style="@style/dashboard_button_style"
-		        android:drawableTop="@drawable/ic_launcher"
+		        android:drawableTop="@drawable/history_icon"
 		        android:onClick="onHistoryButtonClick"
 		        android:text="History" />
 	
 		    <Button
 		        android:id="@+id/libraryButton"
 	            style="@style/dashboard_button_style"
-		        android:drawableTop="@drawable/ic_launcher"
+		        android:drawableTop="@drawable/library_icon"
 		        android:onClick="onLibraryButtonClick"
 		        android:text="Library" />
 	        </LinearLayout>
