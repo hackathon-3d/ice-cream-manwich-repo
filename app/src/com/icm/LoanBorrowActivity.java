@@ -133,6 +133,9 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         default: // cause xzing library doesn't allow an activity request code in its library
                 IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
                 if (scanResult != null) { // don't be dumb user!
+                    scanButton.setVisibility(View.GONE);
+                    barcodeTextView.setVisibility(View.VISIBLE);
+                    
                     barcodeString = scanResult.getContents();
                     barcodeTextView.setText(barcodeString);
                     

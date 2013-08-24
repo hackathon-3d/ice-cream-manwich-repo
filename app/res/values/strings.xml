@@ -7,7 +7,7 @@
     <string name="title_activity_dashboard">Books with Friends</string>
     <string name="loan_title">Loaning</string>
     <string name="borrow_title">Borrowing</string>
-    <string name="scan_media_button">Scan</string>
+    <string name="scan_media_button">Scan barcode</string>
     <string name="loan_borrow_contact_hint">Enter your friend\'s name</string>
     <string name="submit_loan_text">Loan this book</string>
     <string name="submit_borrow_text">Borrow this book</string>
