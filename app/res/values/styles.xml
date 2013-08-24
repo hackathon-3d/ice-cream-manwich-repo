@@ -23,7 +23,7 @@
     </style>
     <style name="dashboard_button_style">
         <item name="android:layout_width">0dip</item>
-        <item name="android:layout_height">180dip</item>
+        <item name="android:layout_height">100dip</item>
         <item name="android:layout_weight">1.0</item>
         <item name="android:layout_margin">7dip</item>
         <item name="android:textColor">@color/ButtonTextColor</item>
