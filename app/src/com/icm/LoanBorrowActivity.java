@@ -13,7 +13,9 @@ import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivit
 @ContentView(R.layout.activity_loan_borrow)
 public class LoanBorrowActivity extends RoboSherlockActivity {
     
-    @InjectExtra("title")                   String title;
+    public static final String TITLE_INTENT = "title"; 
+    
+    @InjectExtra(TITLE_INTENT)              String title;
     @InjectView(R.id.contact_name_input)    EditText contactTextView;
     @InjectView(R.id.due_date_edit_text)    EditText dueDateTextView;
     @InjectView(R.id.scan_button)           Button scanButton;
@@ -23,7 +25,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         super.onCreate(savedInstanceState);
         setTitle(title);
         contactTextView.setOnClickListener(contactClickListener);
-        
+        scanButton.setOnClickListener(scanButtonClickListener);
     }
     
     private final View.OnClickListener contactClickListener = new View.OnClickListener(){

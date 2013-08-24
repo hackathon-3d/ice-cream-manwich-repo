@@ -1,15 +1,20 @@
 package com.icm;
 
-import android.os.Bundle;
-import android.app.Activity;
+import roboguice.inject.InjectResource;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.content.Intent;
 import android.content.Loader;
-import android.view.Menu;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
-public class DashboardActivity extends Activity implements LoaderCallbacks<QuickHistory>{
+import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
 
+public class DashboardActivity extends RoboSherlockActivity implements LoaderCallbacks<QuickHistory>{
+
+    @InjectResource(R.string.loan_title)        String LOAN_TITLE;
+    @InjectResource(R.string.borrow_title)      String BORROW_TITLE;
+    
 	private static final int LOADER_QUICK_HISTORY = 1;
 	
 	
@@ -33,19 +38,16 @@ public class DashboardActivity extends Activity implements LoaderCallbacks<Quick
 		
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.dashboard, menu);
-		return true;
-	}
-	
 	public void onLoanButtonClick(View view) {
-		
+		Intent intent = new Intent(this, LoanBorrowActivity.class);
+		intent.putExtra(LoanBorrowActivity.TITLE_INTENT, LOAN_TITLE);
+		startActivity(intent);
 	}
 	
 	public void onBorrowButtonClick(View view) {
-		
+	    Intent intent = new Intent(this, LoanBorrowActivity.class);
+        intent.putExtra(LoanBorrowActivity.TITLE_INTENT, BORROW_TITLE);
+        startActivity(intent);
 	}
 	
 	public void onHistoryButtonClick(View view) {
