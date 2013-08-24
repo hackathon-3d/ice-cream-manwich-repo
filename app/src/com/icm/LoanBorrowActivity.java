@@ -56,11 +56,21 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle(title);
         contactTextView.setOnClickListener(contactClickListener);
         scanButton.setOnClickListener(scanButtonClickListener);
         productInfoManager = new ProductInfoManager(this); 
     }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return true;
+    }    
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -171,4 +181,5 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     private void setBookImage(String url){
 
     }
+
 }

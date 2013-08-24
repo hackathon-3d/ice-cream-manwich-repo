@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:hint="@string/loan_borrow_contact_hint"
+        android:layout_gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceLarge" >
         
         <requestFocus />
@@ -29,6 +30,7 @@
         android:id="@+id/scan_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/scan_media_button" />
     
     <EditText
@@ -38,6 +40,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:layout_gravity="center_horizontal"
         android:visibility="gone" >
 
     </EditText>
@@ -47,12 +50,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
+        android:layout_gravity="center_horizontal"
         android:src="@drawable/abs__ab_bottom_solid_dark_holo" />
 
     <DatePicker
         android:id="@+id/dueDatePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:spinnersShown="true"
+        android:calendarViewShown="false"
         android:layout_marginBottom="14dp" />
 
 </LinearLayout>
