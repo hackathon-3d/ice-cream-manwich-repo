@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="loan_borrow_row_count">2</integer>
+    <integer name="loan_borrow_column_count">2</integer>
+</resources>
