@@ -9,14 +9,14 @@
     tools:context=".DashboardActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/helloWorldView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
 
             <ListView
-                android:layout_below="@+id/textView1"
+                android:layout_below="@+id/helloWorldView"
                 android:id="@+id/quickHistory"
                 android:layout_width="match_parent"
                 android:layout_height="100dp" >

@@ -7,10 +7,10 @@ import android.content.Loader;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
 import com.icm.bean.PersonBean;
-import com.icm.pojo.BeanLoader;
 import com.icm.pojo.BeanPoster;
 
 public class DashboardActivity extends RoboSherlockActivity implements LoaderCallbacks<QuickHistory>{
@@ -25,7 +25,7 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 	
 	
 	private String phonenumber;
-	private String userid;
+	private int userid;
 	
 	QuickHistoryAdapter quickHistoryAdapter;
 
@@ -43,6 +43,7 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 		Bundle postBody = new Bundle();
 		postBody.putString("name", "Big Mike");
 		postBody.putString("phone", "555-555-1234");
+		postBody.putString("email", "bigmike@bigmike.com");
 		
 		BeanPoster.postBean(PersonBean.class, url, postBody, new BeanPoster.Callback<PersonBean>() {
 			@Override
@@ -51,6 +52,10 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 				DashboardActivity.this.userid = bean.user_id;
 				
 				getLoaderManager().initLoader(LOADER_QUICK_HISTORY, null, DashboardActivity.this);
+				
+				TextView view = (TextView) findViewById(R.id.helloWorldView);
+				
+				view.setText("ID is: " + Integer.toString(bean.user_id));
 			}
 		});
 		

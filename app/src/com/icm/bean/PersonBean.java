@@ -2,8 +2,10 @@ package com.icm.bean;
 
 public class PersonBean {
 
-	public String user_id;
 	public String name;
-	public String phonenumber;
+	public String email;
+	public String phone;
+	
+	public int user_id;
 	
 }

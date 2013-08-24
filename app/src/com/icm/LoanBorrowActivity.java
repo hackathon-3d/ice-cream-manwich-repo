@@ -1,5 +1,6 @@
 package com.icm;
 
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 import org.apache.http.HttpResponse;
@@ -158,6 +159,13 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     	
     	Future<ProductInfo> productInfo = productInfoManager.getProductInfo(barcodeString);
     	
+    	try {
+			ProductInfo info = productInfo.get();
+		} catch (InterruptedException e) {
+			Log.e("LoanBorrowActivity", "Interrupted", e);
+		} catch (ExecutionException e) {
+			Log.e("LoanBorrowActivity", "Execution exception", e);
+		}
     	
 		
 	}

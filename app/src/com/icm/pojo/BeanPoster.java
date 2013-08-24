@@ -1,5 +1,6 @@
 package com.icm.pojo;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -42,7 +43,7 @@ public final class BeanPoster {
 			protected T doInBackground(Void... params) {
 				try 
 				{
-					return postData(beanClass, postBody);
+					return postData(beanClass, urlString, postBody);
 				} 
 				catch (MalformedURLException e) 
 				{
@@ -66,10 +67,10 @@ public final class BeanPoster {
 	}
 	
 	
-	private static <T> T postData(Class<T> beanClass, Bundle postBody) throws ClientProtocolException, IOException {
+	private static <T> T postData(Class<T> beanClass, String urlString, Bundle postBody) throws ClientProtocolException, IOException {
 		// Create a new HttpClient and Post Header
 		HttpClient httpclient = new DefaultHttpClient();
-		HttpPost httppost = new HttpPost("http://www.yoursite.com/api/TripLocker");
+		HttpPost httppost = new HttpPost(urlString);
 
 	    // Add your data
 	    List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
@@ -92,10 +93,28 @@ public final class BeanPoster {
 	    // Execute HTTP Post Request
 	    HttpResponse response = httpclient.execute(httppost);
 	    
-	    
 		InputStream is = response.getEntity().getContent();
 		InputStreamReader reader = new InputStreamReader(is);
-		return new Gson().fromJson(reader, beanClass);
+		BufferedReader br = new BufferedReader(reader);
+
+	    try
+	    {
+			
+			String whole = "";
+			String next = br.readLine();
+			while(next != null)
+			{
+				whole += next;
+				next = br.readLine();
+			}
+			
+			return new Gson().fromJson(whole, beanClass);
+	    }
+	    finally
+	    {
+	    	if(br != null)
+	    		br.close();
+	    }
 
 	}
 }
