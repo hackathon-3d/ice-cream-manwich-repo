@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/templatetags
+END
+adminmedia.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/templatetags/adminmedia.py
+END
+admin_urls.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/templatetags/admin_urls.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/contrib/admin/templatetags/__init__.py
+END
+admin_modify.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/templatetags/admin_modify.py
+END
+admin_static.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/templatetags/admin_static.py
+END
+log.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/templatetags/log.py
+END
+admin_list.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/templatetags/admin_list.py
+END

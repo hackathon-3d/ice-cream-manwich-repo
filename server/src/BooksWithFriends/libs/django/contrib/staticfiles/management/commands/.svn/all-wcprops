@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/staticfiles/management/commands
+END
+findstatic.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/contrib/staticfiles/management/commands/findstatic.py
+END
+runserver.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/staticfiles/management/commands/runserver.py
+END
+collectstatic.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/staticfiles/management/commands/collectstatic.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/contrib/staticfiles/management/commands/__init__.py
+END

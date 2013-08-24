@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core
+END
+validators.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/validators.py
+END
+wsgi.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/wsgi.py
+END
+signing.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/signing.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/core/__init__.py
+END
+signals.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/core/signals.py
+END
+exceptions.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/exceptions.py
+END
+xheaders.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/core/xheaders.py
+END
+paginator.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/paginator.py
+END
+context_processors.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/context_processors.py
+END
+urlresolvers.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/core/urlresolvers.py
+END

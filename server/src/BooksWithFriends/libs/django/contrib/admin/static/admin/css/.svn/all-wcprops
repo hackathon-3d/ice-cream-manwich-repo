@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/static/admin/css
+END
+login.css
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/static/admin/css/login.css
+END
+base.css
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/static/admin/css/base.css
+END
+ie.css
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/static/admin/css/ie.css
+END
+rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/static/admin/css/rtl.css
+END
+changelists.css
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/static/admin/css/changelists.css
+END
+forms.css
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/static/admin/css/forms.css
+END
+widgets.css
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/static/admin/css/widgets.css
+END
+dashboard.css
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/admin/static/admin/css/dashboard.css
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/db/backends/postgresql_psycopg2
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/db/backends/postgresql_psycopg2/base.py
+END
+client.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/db/backends/postgresql_psycopg2/client.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/db/backends/postgresql_psycopg2/__init__.py
+END
+introspection.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/db/backends/postgresql_psycopg2/introspection.py
+END
+operations.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/db/backends/postgresql_psycopg2/operations.py
+END
+creation.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/db/backends/postgresql_psycopg2/creation.py
+END
+version.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/db/backends/postgresql_psycopg2/version.py
+END

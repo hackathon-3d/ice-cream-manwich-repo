@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/bin
+END
+django-admin.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/bin/django-admin.py
+END
+daily_cleanup.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/bin/daily_cleanup.py
+END
+unique-messages.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/bin/unique-messages.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/bin/__init__.py
+END

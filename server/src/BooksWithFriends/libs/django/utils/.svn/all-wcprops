@@ -1,0 +1,269 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils
+END
+termcolors.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/termcolors.py
+END
+timezone.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/timezone.py
+END
+autoreload.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/autoreload.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/__init__.py
+END
+baseconv.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/baseconv.py
+END
+dates.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/dates.py
+END
+numberformat.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/numberformat.py
+END
+importlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/importlib.py
+END
+six.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/six.py
+END
+html.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/html.py
+END
+safestring.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/safestring.py
+END
+tzinfo.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/tzinfo.py
+END
+regex_helper.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/regex_helper.py
+END
+dictconfig.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/dictconfig.py
+END
+daemonize.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/daemonize.py
+END
+formats.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/formats.py
+END
+datastructures.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/datastructures.py
+END
+http.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/http.py
+END
+_os.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/_os.py
+END
+crypto.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/crypto.py
+END
+xmlutils.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/xmlutils.py
+END
+module_loading.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/module_loading.py
+END
+ipv6.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/ipv6.py
+END
+synch.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/synch.py
+END
+datetime_safe.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/datetime_safe.py
+END
+tree.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/tree.py
+END
+functional.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/functional.py
+END
+cache.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/cache.py
+END
+decorators.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/decorators.py
+END
+itercompat.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/itercompat.py
+END
+dateparse.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/dateparse.py
+END
+feedgenerator.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/feedgenerator.py
+END
+copycompat.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/copycompat.py
+END
+html_parser.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/html_parser.py
+END
+timesince.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/timesince.py
+END
+log.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/log.py
+END
+archive.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/archive.py
+END
+text.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/text.py
+END
+version.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/version.py
+END
+jslex.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/jslex.py
+END
+checksums.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/checksums.py
+END
+dateformat.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/dateformat.py
+END
+encoding.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/encoding.py
+END
+hashcompat.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/hashcompat.py
+END

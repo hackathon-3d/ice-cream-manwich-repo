@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/test
+END
+simple.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/test/simple.py
+END
+client.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/test/client.py
+END
+testcases.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/test/testcases.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/test/__init__.py
+END
+signals.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/test/signals.py
+END
+utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/test/utils.py
+END
+_doctest.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/test/_doctest.py
+END
+html.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/test/html.py
+END

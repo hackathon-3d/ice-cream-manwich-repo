@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/simplejson
+END
+scanner.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/simplejson/scanner.py
+END
+tool.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/simplejson/tool.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/utils/simplejson/__init__.py
+END
+encoder.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/simplejson/encoder.py
+END
+decoder.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/crewspotr/!svn/ver/266/trunk/libs/django/utils/simplejson/decoder.py
+END

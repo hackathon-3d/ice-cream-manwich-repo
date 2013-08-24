@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/formtools/wizard
+END
+views.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/formtools/wizard/views.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/formtools/wizard/__init__.py
+END
+forms.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/crewspotr/!svn/ver/267/trunk/libs/django/contrib/formtools/wizard/forms.py
+END
