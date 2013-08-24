@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/contact_name_input"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="18dp"
         android:text="@string/scan_media_button" />
 
     <EditText
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/scan_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="18dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/due_date_edit_text"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="18dp"
         android:src="@drawable/abs__ab_bottom_solid_dark_holo" />
 
     <EditText
@@ -52,8 +52,17 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/media_editable_title"
         android:layout_below="@+id/media_editable_title"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="18dp"
         android:ems="10"
         android:inputType="date" />
+
+    <Button
+        android:id="@+id/loan_borrow_submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loan_borrow_book_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/submit" />
 
 </RelativeLayout>
