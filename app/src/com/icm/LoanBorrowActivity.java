@@ -1,5 +1,10 @@
 package com.icm;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectExtra;
 import roboguice.inject.InjectView;
@@ -31,6 +36,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     @InjectView(R.id.media_editable_title)  EditText barcodeTextView;
     @InjectView(R.id.scan_button)           Button scanButton;
     @InjectView(R.id.loan_borrow_book_image)ImageView bookImageView;
+    @InjectView(R.id.loan_borrow_submit_button)Button submitButton;
     
     private String contactName;    
     private String contactNumber;  
@@ -42,6 +48,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         setTitle(title);
         contactTextView.setOnClickListener(contactClickListener);
         scanButton.setOnClickListener(scanButtonClickListener);
+        submitButton.setOnClickListener(submitButtonClickListener);
     }
 
     private final View.OnClickListener contactClickListener = new View.OnClickListener() {
@@ -57,6 +64,13 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         public void onClick(View v) {
             IntentIntegrator integrator = new IntentIntegrator(LoanBorrowActivity.this);
             integrator.initiateScan();
+        }
+    };
+
+    private final View.OnClickListener submitButtonClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            postStuff(contactNumber);
         }
     };
 
@@ -101,6 +115,18 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
                     barcodeTextView.setText(barcodeString);
                 }
             break;
+        }
+    }
+    
+    public void postStuff(String phoneNumber){
+        HttpClient httpClient = new DefaultHttpClient();
+        HttpPost httpPost = new HttpPost(Constants.newUserPostUrl(phoneNumber));
+
+        try{
+            // no post params?
+            HttpResponse response = httpClient.execute(httpPost);
+        } catch(Exception e){
+            
         }
     }
     

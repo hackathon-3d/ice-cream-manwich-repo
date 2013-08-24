@@ -12,5 +12,9 @@ public class Constants {
 	public static final String newUserPostUrl(String name, String phone){
 	    return NEW_USER_URL + name + "/" + phone + "phone";
 	}
+	
+    public static final String newUserPostUrl(String phone){
+        return NEW_USER_URL + phone + "phone";
+    }
 
 }
