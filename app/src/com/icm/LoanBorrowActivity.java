@@ -23,7 +23,6 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
 
     public static final String TITLE_INTENT = "title";
     private static final int PICK_CONTACT_INTENT  = 1234; // arbitrary!
-    private static final int BARCODE_INTENT       = PICK_CONTACT_INTENT + 1;
     
     @InjectExtra(TITLE_INTENT)              String title;
     @InjectView(R.id.contact_name_input)    EditText contactTextView;
@@ -32,7 +31,8 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     @InjectView(R.id.scan_button)           Button scanButton;
     
     private String contactName;    
-    private String contactNumber;
+    private String contactNumber;  
+    private String barcodeString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +96,8 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         default: // cause xzing library doesn't allow an activity request code in its library
                 IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
                 if (scanResult != null) { // don't be dumb user!
-                    barcodeTextView.setText(scanResult.getContents());
+                    barcodeString = scanResult.getContents();
+                    barcodeTextView.setText(barcodeString);
                 }
             break;
         }
