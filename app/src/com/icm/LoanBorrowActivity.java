@@ -10,11 +10,13 @@ import roboguice.inject.InjectExtra;
 import roboguice.inject.InjectResource;
 import roboguice.inject.InjectView;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -141,6 +143,12 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         } catch(Exception e){
             
         }
+    }
+    
+    public String getDevicePhoneNumber(){
+        TelephonyManager manager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        String phoneNumber = manager.getLine1Number();
+        return phoneNumber;
     }
     
     private void setBookImage(String url){
