@@ -14,58 +14,57 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
+     <TableLayout
+         android:layout_below="@+id/helloWorldView"
+         android:id="@+id/quickHistory"
+         android:layout_width="match_parent"
+         android:layout_height="100dp" >
+     </TableLayout>
 
-            <ListView
-                android:layout_below="@+id/helloWorldView"
-                android:id="@+id/quickHistory"
-                android:layout_width="match_parent"
-                android:layout_height="100dp" >
-            </ListView>
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@+id/quickHistory"
+	    android:orientation="vertical" >
 
-
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignLeft="@+id/quickHistory"
-        android:layout_below="@+id/quickHistory" android:id="@+id/dashboardButtonFrame">
-
-        <GridLayout
+        <LinearLayout 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnCount="2" >
+            android:layout_height="wrap_content" >
+        
+                <Button
+                    android:id="@+id/loanButton"
+                    style="@style/dashboard_button_style"
+                    android:drawableTop="@drawable/ic_launcher"
+                    android:onClick="onLoanButtonClick"
+                    android:text="Loan" />
 
-            <Button
-                android:id="@+id/loanButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_launcher"
-                android:onClick="onLoanButtonClick"
-                android:text="Loan" />
-            <Button
-                android:id="@+id/borrowButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_launcher"
-                android:onClick="onBorrowButtonClick"
-                android:text="Borrow" />
-                        <Button
-                android:id="@+id/historyButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_launcher"
-                android:onClick="onHistoryButtonClick"
-                android:text="History" />
-                        <Button
-                android:id="@+id/libraryButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_launcher"
-                android:onClick="onLibraryButtonClick"
-                android:text="Library" />
-            </GridLayout>
+                <Button
+                    android:id="@+id/borrowButton"
+                    style="@style/dashboard_button_style"
+                    android:drawableTop="@drawable/ic_launcher"
+                    android:onClick="onBorrowButtonClick"
+                    android:text="Borrow" />
+        </LinearLayout>
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+	
+		    <Button
+		        android:id="@+id/historyButton"
+	            style="@style/dashboard_button_style"
+		        android:drawableTop="@drawable/ic_launcher"
+		        android:onClick="onHistoryButtonClick"
+		        android:text="History" />
+	
+		    <Button
+		        android:id="@+id/libraryButton"
+	            style="@style/dashboard_button_style"
+		        android:drawableTop="@drawable/ic_launcher"
+		        android:onClick="onLibraryButtonClick"
+		        android:text="Library" />
+	        </LinearLayout>
 
-    </FrameLayout>
-
-
+	</LinearLayout>
 
 </RelativeLayout>
