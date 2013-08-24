@@ -12,15 +12,22 @@ public class DashboardActivity extends Activity implements LoaderCallbacks<Quick
 
 	private static final int LOADER_QUICK_HISTORY = 1;
 	
+	
+	QuickHistoryAdapter quickHistoryAdapter;
+
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dashboard);
 		
-		ListView historyView = (ListView) findViewById(R.id.quickHistory);
-		MyAssert.assume(historyView != null, "historyView was null");
-		
 		getLoaderManager().initLoader(LOADER_QUICK_HISTORY, null, this);
+		
+		quickHistoryAdapter = new QuickHistoryAdapter(this);
+		
+		ListView historyView = (ListView) findViewById(R.id.quickHistory);
+		
+		historyView.setAdapter(quickHistoryAdapter);
 		
 		
 		
@@ -52,13 +59,15 @@ public class DashboardActivity extends Activity implements LoaderCallbacks<Quick
 	@Override
 	public QuickHistoryLoader onCreateLoader(int id, Bundle args) {
 		
-		MyAssert.assume(id == LOADER_QUICK_HISTORY, "Unrecognized loader id");
+		// Assume id  == LOADER_QUICK_HISTORY
 		
 		return new QuickHistoryLoader(this);
 	}
 
 	@Override
 	public void onLoadFinished(Loader<QuickHistory> loader, QuickHistory data) {
+
+		quickHistoryAdapter.swapContent(data);
 		// TODO Auto-generated method stub
 		
 	}
@@ -66,6 +75,9 @@ public class DashboardActivity extends Activity implements LoaderCallbacks<Quick
 	@Override
 	public void onLoaderReset(Loader<QuickHistory> loader) {
 		// TODO Auto-generated method stub
+		
+		quickHistoryAdapter.swapContent(null);
+		
 		
 	}
 
