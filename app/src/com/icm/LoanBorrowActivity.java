@@ -9,7 +9,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectExtra;
-import roboguice.inject.InjectResource;
 import roboguice.inject.InjectView;
 import android.app.Activity;
 import android.content.Context;
@@ -38,11 +37,12 @@ import com.icm.products.ProductInfoManager;
 @ContentView(R.layout.activity_loan_borrow)
 public class LoanBorrowActivity extends RoboSherlockActivity {
 
-    public static final String TITLE_INTENT = "title";
+    public static final String TITLE_INTENT_EXTRA = "title";
+    public static final String SUBMIT_INTENT_EXTRA = "submit";
     private static final int PICK_CONTACT_INTENT  = 1234; // arbitrary!
     
-    @InjectExtra(TITLE_INTENT)              String title;
-    @InjectResource(R.string.share_text)    String shareText;
+    @InjectExtra(TITLE_INTENT_EXTRA)        String title;
+    @InjectExtra(SUBMIT_INTENT_EXTRA)       String submitText;
     @InjectView(R.id.contact_name_input)    EditText contactTextView;
     @InjectView(R.id.dueDatePicker)         DatePicker dueDatePicker;
     @InjectView(R.id.media_editable_title)  EditText barcodeTextView;
@@ -66,7 +66,8 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuItem shareMenuItem = menu.add(shareText);
+        MenuItem shareMenuItem = menu.add(submitText);
+        shareMenuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         shareMenuItem.setOnMenuItemClickListener(submitButtonClickListener);
         return true;
     }

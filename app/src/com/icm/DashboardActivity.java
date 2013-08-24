@@ -14,6 +14,8 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 
     @InjectResource(R.string.loan_title)        String LOAN_TITLE;
     @InjectResource(R.string.borrow_title)      String BORROW_TITLE;
+    @InjectResource(R.string.submit_loan_text)  String LOAN_THIS_BOOK;
+    @InjectResource(R.string.submit_borrow_text)String BORROW_THIS_BOOK;
     
 	private static final int LOADER_QUICK_HISTORY = 1;
 	
@@ -40,13 +42,15 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 
 	public void onLoanButtonClick(View view) {
 		Intent intent = new Intent(this, LoanBorrowActivity.class);
-		intent.putExtra(LoanBorrowActivity.TITLE_INTENT, LOAN_TITLE);
+		intent.putExtra(LoanBorrowActivity.TITLE_INTENT_EXTRA, LOAN_TITLE);
+		intent.putExtra(LoanBorrowActivity.SUBMIT_INTENT_EXTRA, LOAN_THIS_BOOK);
 		startActivity(intent);
 	}
 	
 	public void onBorrowButtonClick(View view) {
 	    Intent intent = new Intent(this, LoanBorrowActivity.class);
-        intent.putExtra(LoanBorrowActivity.TITLE_INTENT, BORROW_TITLE);
+        intent.putExtra(LoanBorrowActivity.TITLE_INTENT_EXTRA, BORROW_TITLE);
+        intent.putExtra(LoanBorrowActivity.SUBMIT_INTENT_EXTRA, BORROW_THIS_BOOK);
         startActivity(intent);
 	}
 	
