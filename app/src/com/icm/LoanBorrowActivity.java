@@ -112,7 +112,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     private final MenuItem.OnMenuItemClickListener submitButtonClickListener = new MenuItem.OnMenuItemClickListener() {
         @Override
         public boolean onMenuItemClick(MenuItem item) {
-            postStuff(contactNumber);
+            postStuff();
             // hopefully after the post, we do
             // onBackPressed
             // and return the user to the main screen with an updated due book list.
@@ -204,15 +204,21 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
 		
 	}
 
-	public void postStuff(String phoneNumber){
-		Log.i("LoanBorrowActivity", "Getting friend id " + phoneNumber);
+	public void postStuff(){
+		if(this.contactNumber == null)
+			contactNumber = "555-555-5555";
+		if(this.contactName == null)
+			contactName = "Mike";
+		
+		
+		Log.i("LoanBorrowActivity", "Getting friend id " + this.contactNumber);
 		
 		// Create a username for the friend
-		String url = Constants.newUserPostUrl(phoneNumber);
+		String url = Constants.newUserPostUrl(this.contactNumber);
 		
 		Bundle postBody = new Bundle();
 		postBody.putString("name", this.contactName);
-		postBody.putString("phone", phoneNumber);
+		postBody.putString("phone", this.contactNumber);
 		postBody.putString("email", "noone@example.com");
 		
 		BeanPoster.postBean(PersonBean.class, url, postBody, new BeanPoster.Callback<PersonBean>() {

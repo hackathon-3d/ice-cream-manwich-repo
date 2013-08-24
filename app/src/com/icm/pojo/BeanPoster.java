@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 
 public final class BeanPoster {
 
@@ -81,7 +82,7 @@ public final class BeanPoster {
 	    	
 	    	if(value == null)
 	    	{
-	    		Log.e("BeanPoster", "Value in postBody was not a string", new Exception());
+	    		Log.w("BeanPoster", "Value in postBody was not a string", new Exception());
 	    		continue;
 	    	}
 	    	
@@ -97,10 +98,10 @@ public final class BeanPoster {
 		InputStreamReader reader = new InputStreamReader(is);
 		BufferedReader br = new BufferedReader(reader);
 
+		String whole = "";
 	    try
 	    {
 			
-			String whole = "";
 			String next = br.readLine();
 			while(next != null)
 			{
@@ -109,6 +110,11 @@ public final class BeanPoster {
 			}
 			
 			return new Gson().fromJson(whole, beanClass);
+	    }
+	    catch(JsonSyntaxException e)
+	    {
+	    	Log.e("BeanPoster", "Bad JSON: " + whole);
+	    	throw e;
 	    }
 	    finally
 	    {

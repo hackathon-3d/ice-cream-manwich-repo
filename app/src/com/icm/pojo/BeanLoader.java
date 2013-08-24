@@ -11,6 +11,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonParseException;
 
 public final class BeanLoader {
 	
@@ -36,10 +37,9 @@ public final class BeanLoader {
 					InputStreamReader reader = new InputStreamReader(is);
 					BufferedReader br = new BufferedReader(reader);
 					
+					String whole = "";
 				    try
 				    {
-						
-						String whole = "";
 						String next = br.readLine();
 						while(next != null)
 						{
@@ -48,6 +48,11 @@ public final class BeanLoader {
 						}
 						
 						return new Gson().fromJson(whole, beanClass);
+				    }
+				    catch(JsonParseException e)
+				    {
+				    	Log.e("BeanLoader", "Bad JSON: " + whole);
+				    	throw e;
 				    }
 				    finally
 				    {
