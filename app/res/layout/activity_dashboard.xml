@@ -35,14 +35,14 @@
                 <Button
                     android:id="@+id/loanButton"
                     style="@style/dashboard_button_style"
-                    android:drawableTop="@drawable/ic_launcher"
+                    android:drawableTop="@drawable/loan_icon"
                     android:onClick="onLoanButtonClick"
                     android:text="Loan" />
 
                 <Button
                     android:id="@+id/borrowButton"
                     style="@style/dashboard_button_style"
-                    android:drawableTop="@drawable/ic_launcher"
+                    android:drawableTop="@drawable/borrow_icon"
                     android:onClick="onBorrowButtonClick"
                     android:text="Borrow" />
         </LinearLayout>
