@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
@@ -53,6 +54,11 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     private String contactNumber;  
     private String barcodeString;
     
+	protected String imageURL;
+
+    
+    public int userid;
+    
     private ProductInfoManager productInfoManager;
 
     @Override
@@ -65,6 +71,8 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         scanButton.setOnClickListener(scanButtonClickListener);
         manualScanButton.setOnClickListener(manualScanButtonClickListener);
         productInfoManager = new ProductInfoManager(this); 
+        
+        getMyUserId();
     }
     
     @Override
@@ -170,6 +178,30 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         }
     }
     
+    private void getMyUserId()
+    {
+		// Get the username from the phone number
+		String phonenumber = Constants.getDevicePhoneNumber(this);
+		String url = Constants.newUserPostUrl("555-555-1234");
+		
+		Bundle postBody = new Bundle();
+		postBody.putString("name", "Big Mike");
+		postBody.putString("phone", phonenumber);
+		postBody.putString("email", "bigmike@bigmike.com");
+		
+		BeanPoster.postBean(PersonBean.class, url, postBody, new BeanPoster.Callback<PersonBean>() {
+			@Override
+			public void beanPosted(PersonBean bean) {
+				
+				LoanBorrowActivity.this.userid = bean.user_id;
+				
+				Log.i("LoanBorrowActivity", "My user id is " + bean.user_id);
+			}
+		});
+		
+
+    }
+    
     private void loadBarcodeInformation() {
 		// TODO Auto-generated method stub
     	
@@ -203,6 +235,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
 				
 				barcodeTextView.setText(result.name);
 				
+				LoanBorrowActivity.this.imageURL = result.imageUrl.toString();
 				
 				ImageLoader.getInstance().displayImage(result.imageUrl.toString(), bookImageView);
 				
@@ -240,6 +273,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
 				Log.i("LoanBorrowActivity", "Friend ID is " + bean.user_id);
 				int friendId = bean.user_id;
 				
+				
 				postLoanStuff(friendId);
 			}
 		});
@@ -249,17 +283,20 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     protected void postLoanStuff(int friendId) {
 		Log.i("LoanBorrowActivity", "posting new loan stuff");
     	
-    	String fromId = getDevicePhoneNumber();
+    	String fromId = Integer.toString(this.userid);
 		String toId = Integer.toString(friendId);
 		
 		LoanBean bean = new LoanBean();
 		bean.name = barcodeTextView.getText().toString();
 		bean.category = "Book";
 		bean.dueDate = dueDatePicker.getMonth() + "/" + dueDatePicker.getDayOfMonth() + "/" + dueDatePicker.getYear();
+		bean.imageURL = this.imageURL;
 		
 		LoanPoster loanPoster = new LoanPoster(fromId, toId);
 		
 		loanPoster.execute(bean);
+		
+		this.finish();
 
 	}
 
