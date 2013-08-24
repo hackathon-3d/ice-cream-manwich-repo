@@ -61,12 +61,13 @@ public class DashboardActivity extends RoboSherlockActivity implements LoaderCal
 				TextView view = (TextView) findViewById(R.id.helloWorldView);
 				
 				view.setText("ID is: " + Integer.toString(bean.user_id));
+				view.setVisibility(View.GONE);
 			}
 		});
 
 		View view = getLayoutInflater().inflate(R.layout.due_date_row, null);
 		TextView textView = (TextView) view.findViewById(R.id.due_date_row_book_title);
-		textView.setText("Moby Dick");
+		textView.setText("Moby Dick is due in 3 days.");
 		
 		dueDatesTableLayout.addView(view);		
 		
