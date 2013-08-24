@@ -57,17 +57,27 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle(title);
         contactTextView.setOnClickListener(contactClickListener);
         scanButton.setOnClickListener(scanButtonClickListener);
         productInfoManager = new ProductInfoManager(this); 
     }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return true;
+    }    
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuItem shareMenuItem = menu.add(submitText);
-        shareMenuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        shareMenuItem.setOnMenuItemClickListener(submitButtonClickListener);
+        MenuItem submitMenuItem = menu.add(submitText);
+        submitMenuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        submitMenuItem.setOnMenuItemClickListener(submitButtonClickListener);
         return true;
     }
     
@@ -91,6 +101,9 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         @Override
         public boolean onMenuItemClick(MenuItem item) {
             postStuff(contactNumber);
+            // hopefully after the post, we do
+            // onBackPressed
+            // and return the user to the main screen with an updated due book list.
             return true;
         }
     };
@@ -179,4 +192,5 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     private void setBookImage(String url){
 
     }
+
 }
