@@ -26,6 +26,15 @@
             android:name="com.icm.LoanBorrowActivity"
             android:label="@string/title_activity_loan_borrow" >
         </activity>
+        <activity
+            android:name="com.icm.DashboardActivity"
+            android:label="@string/title_activity_dashboard" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
