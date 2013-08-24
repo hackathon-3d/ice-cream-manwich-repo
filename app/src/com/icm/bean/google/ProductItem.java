@@ -1,6 +1,5 @@
 package com.icm.bean.google;
 
-import java.util.List;
 
 public class ProductItem {
 
