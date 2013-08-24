@@ -11,5 +11,7 @@
     <string name="loan_borrow_contact_hint">Enter your friend\'s name</string>
     <string name="submit_loan_text">Loan this book</string>
     <string name="submit_borrow_text">Borrow this book</string>
+    <string name="title_activity_history">HistoryActivity</string>
+    <string name="title_activity_library">LibraryActivity</string>
 
 </resources>
