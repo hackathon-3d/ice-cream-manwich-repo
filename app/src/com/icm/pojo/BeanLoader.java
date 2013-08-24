@@ -6,48 +6,55 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import android.content.AsyncTaskLoader;
-import android.content.Context;
+import android.os.AsyncTask;
 import android.util.Log;
 
 import com.google.gson.Gson;
 
-public abstract class BeanLoader<T> extends AsyncTaskLoader<T> {
+public final class BeanLoader {
 	
-	private final Class<T> beanClass;
-	public final String urlString;
-	
-	public BeanLoader(Context context, Class<T> beanClass, String urlString)
-	{
-		super(context);
-		this.beanClass = beanClass;
-		this.urlString = urlString;
+	public interface Callback<T> {
+		public void beanLoaded(T bean);
 	}
 	
-	@Override
-	public T loadInBackground() 
+	private BeanLoader(){}
+	
+	public static <T> void loadBean(
+			final Class<T> beanClass, 
+			final String urlString, 
+			final Callback<T> callback) 
 	{
-		
-		try {
-			InputStream is = new URL(urlString).openStream();
-			InputStreamReader reader = new InputStreamReader(is);
-			return new Gson().fromJson(reader, beanClass);
-		} 
-		catch (MalformedURLException e) 
-		{
-			Log.e("BeanLoader", "Exception loading bean", e);
-		}
-		catch (IOException e) 
-		{
-			Log.e("BeanLoader", "Exception loading bean", e);
-		}
+		new AsyncTask<Void, Void, T>() {
 
-		return null;
+			@Override
+			protected T doInBackground(Void... params) {
+				try 
+				{
+					InputStream is = new URL(urlString).openStream();
+					InputStreamReader reader = new InputStreamReader(is);
+					return new Gson().fromJson(reader, beanClass);
+				} 
+				catch (MalformedURLException e) 
+				{
+					Log.e("BeanLoader", "Exception loading bean", e);
+				}
+				catch (IOException e) 
+				{
+					Log.e("BeanLoader", "Exception loading bean", e);
+				}
+
+				return null;
+			}
+			
+			@Override
+			protected void onPostExecute(T result) {
+				if (result != null) {
+					callback.beanLoaded(result);
+				}
+			}
+		}.execute();
 	}
-	
-	
-	@Override
-	public abstract void deliverResult(T item);
-	
 }
+
+
 

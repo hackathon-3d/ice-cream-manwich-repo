@@ -1,5 +1,7 @@
 package com.icm;
 
+import java.util.concurrent.Future;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -29,6 +31,7 @@ import com.actionbarsherlock.view.MenuItem;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.icm.products.ProductInfoManager;
 
 
 
@@ -49,6 +52,8 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
     private String contactName;    
     private String contactNumber;  
     private String barcodeString;
+    
+    private ProductInfoManager productInfoManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +61,7 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         setTitle(title);
         contactTextView.setOnClickListener(contactClickListener);
         scanButton.setOnClickListener(scanButtonClickListener);
+        productInfoManager = new ProductInfoManager(this); 
     }
 
     @Override
@@ -128,12 +134,23 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
                 if (scanResult != null) { // don't be dumb user!
                     barcodeString = scanResult.getContents();
                     barcodeTextView.setText(barcodeString);
+                    
+                    loadBarcodeInformation();
                 }
             break;
         }
     }
     
-    public void postStuff(String phoneNumber){
+    private void loadBarcodeInformation() {
+		// TODO Auto-generated method stub
+    	
+    	Future<ProductInfo> productInfo = productInfoManager.getProductInfo(barcodeString);
+    	
+    	
+		
+	}
+
+	public void postStuff(String phoneNumber){
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost(Constants.newUserPostUrl(phoneNumber));
 
