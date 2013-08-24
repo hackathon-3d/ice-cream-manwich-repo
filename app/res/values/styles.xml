@@ -24,9 +24,11 @@
         <item name="android:layout_margin">7dip</item>
     </style>
     <style name="TextEditor">
-        <item name="android:textColor">#F0F0F0</item>
+        <item name="android:textColor">#D0D0D0</item>
     </style>
-    <style name="DatePickerStyle" parent="TextEditor"></style>
+    <style name="DatePickerStyle" parent="TextEditor">
+        <item name="android:editTextStyle">#D0D0D0</item>
+    </style>
     <style name="ButtonStyle"></style>
 
 </resources>
