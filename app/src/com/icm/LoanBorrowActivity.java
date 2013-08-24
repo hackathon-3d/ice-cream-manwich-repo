@@ -75,9 +75,9 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuItem shareMenuItem = menu.add(submitText);
-        shareMenuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        shareMenuItem.setOnMenuItemClickListener(submitButtonClickListener);
+        MenuItem submitMenuItem = menu.add(submitText);
+        submitMenuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        submitMenuItem.setOnMenuItemClickListener(submitButtonClickListener);
         return true;
     }
     
@@ -101,6 +101,9 @@ public class LoanBorrowActivity extends RoboSherlockActivity {
         @Override
         public boolean onMenuItemClick(MenuItem item) {
             postStuff(contactNumber);
+            // hopefully after the post, we do
+            // onBackPressed
+            // and return the user to the main screen with an updated due book list.
             return true;
         }
     };
